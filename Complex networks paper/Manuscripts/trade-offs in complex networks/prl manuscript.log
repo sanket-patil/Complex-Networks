@@ -1,0 +1,279 @@
+This is pdfTeX, Version 3.141592-1.40.4 (MiKTeX 2.7) (preloaded format=latex 2008.2.24)  13 JUN 2009 17:13
+entering extended mode
+**prl*manuscript.tex
+("prl manuscript.tex"
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, french, loaded.
+("C:\Program Files\MiKTeX 2.7\tex\latex\revtex4\revtex4.cls"
+Document Class: revtex4 2001/08/03 v4.0 (http://publish.aps.org/revtex4/ for do
+cumentation)
+ Copyright (c) 2001 The American Physical Society.
+ mailto:revtex@aps.org
+ Licensed under the LPPL:
+http://www.ctan.org/tex-archive/macros/latex/base/lppl.txt
+ Arthur Ogawa <ogawa@teleport.com>
+ Based on work by David Carlisle <david@dcarlisle.demon.co.uk>.
+ltxutil: portions licensed from W. E. Baxter (web@superscript.com)
+Class revtex4 Info: Repairing broken LateX \@sect on input line 596.
+\intertabularlinepenalty=\count79
+\@tbpen=\count80
+\@arstrutbox@hline=\box26
+Class revtex4 Info: Repairing broken LaTeX \@xbitor on input line 1610.
+ltxgrid: portions licensed from W. E. Baxter (web@superscript.com)
+\c@linecount=\count81
+\output=\toks14
+\@protection@box=\box27
+\@topmark@saved=\toks15
+\footins@saved=\box28
+\pagesofar=\box29
+\footbox=\box30
+\pagegrid@col=\count82
+Class revtex4 Info: Incorporating package {textcase}  [1998/11/12 v0.06 Text on
+ly upper/lower case changing (DPC)]. on input line 3682.
+("C:\Program Files\MiKTeX 2.7\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+\c@affil=\count83
+\absbox=\box31
+\c@part=\count84
+\c@section=\count85
+\c@subsection=\count86
+\c@subsubsection=\count87
+\c@paragraph=\count88
+\c@subparagraph=\count89
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\c@figure=\count90
+\c@table=\count91
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\natbib\natbib.sty"
+Package: natbib 2009/02/02 8.3 (PWD, AO)
+\bibhang=\skip43
+\bibsep=\skip44
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count92
+)
+\widetext@top=\box32
+\widetext@bot=\box33
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\revtex4\revsymb.sty"
+Package: revsymb 2001/08/03 v4.0 (http://publish.aps.org/revtex4/ for documenta
+tion)
+LaTeX Info: Redefining \REV@mathfrak on input line 118.
+))
+("C:\Program Files\MiKTeX 2.7\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2002/01/22 v2.2d
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2001/10/25 v2.2f
+\@emptytoks=\toks16
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+LaTeX Info: Redefining \frak on input line 135.
+LaTeX Info: Redefining \Bbb on input line 137.
+))
+("C:\Program Files\MiKTeX 2.7\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.7\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks17
+\ex@=\dimen102
+))
+("C:\Program Files\MiKTeX 2.7\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen103
+)
+("C:\Program Files\MiKTeX 2.7\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count93
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count94
+\leftroot@=\count95
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count96
+\DOTSCASE@=\count97
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box34
+\strutbox@=\box35
+\big@size=\dimen104
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count98
+\c@MaxMatrixCols=\count99
+\dotsspace@=\muskip11
+\c@parentequation=\count100
+\dspbrk@lvl=\count101
+\tag@help=\toks18
+\row@=\count102
+\column@=\count103
+\maxfields@=\count104
+\andhelp@=\toks19
+\eqnshift@=\dimen105
+\alignsep@=\dimen106
+\tagshift@=\dimen107
+\tagwidth@=\dimen108
+\totwidth@=\dimen109
+\lineht@=\dimen110
+\@envbody=\toks20
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+
+Class revtex4 Warning: No Society specified, using generic APS style.
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\revtex4\aps.rtx"
+File: aps.rtx 2001/08/03 v4.0 (http://publish.aps.org/revtex4/ for documentatio
+n)
+)
+("C:\Program Files\MiKTeX 2.7\tex\latex\revtex4\10pt.rtx"
+File: 10pt.rtx 2001/08/03 v4.0 (http://publish.aps.org/revtex4/ for documentati
+on)
+)
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks22
+)
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\graphics.sty"
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.7\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 90.
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\dvips.def"
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen111
+\Gin@req@width=\dimen112
+)
+("C:\Program Files\MiKTeX 2.7\tex\latex\tools\dcolumn.sty"
+Package: dcolumn 2001/05/28 v1.06 decimal alignment package (DPC)
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\tools\array.sty"
+Package: array 2005/08/23 v2.4b Tabular extension package (FMi)
+\col@sep=\dimen113
+\extrarowheight=\dimen114
+\NC@list=\toks23
+\extratabsurround=\skip48
+\backup@length=\skip49
+))
+("C:\Program Files\MiKTeX 2.7\tex\latex\tools\bm.sty"
+Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 137.
+LaTeX Info: Redefining \bm on input line 203.
+) ("prl manuscript.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+Class revtex4 Info: Patching array package. on input line 35.
+Class revtex4 Info: cite was not loaded (OK!) on input line 35.
+Class revtex4 Info: multicol was not loaded (OK!) on input line 35.
+LaTeX Font Info:    Try loading font information for U+msa on input line 66.
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 66.
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+)
+
+Package natbib Warning: Citation `martinez' on page 1 undefined on input line 7
+1.
+
+
+Package natbib Warning: Citation `vespignani' on page 1 undefined on input line
+ 71.
+
+
+Package natbib Warning: Citation `soc' on page 1 undefined on input line 75.
+
+
+Package natbib Warning: Citation `hot' on page 1 undefined on input line 80.
+
+
+Package natbib Warning: Citation `hotnets' on page 1 undefined on input line 80
+.
+
+
+Package natbib Warning: Citation `hot-mathematics09' on page 1 undefined on inp
+ut line 80.
+
+
+Package natbib Warning: Citation `venkat04' on page 1 undefined on input line 8
+2.
+
+[1]
+
+Package natbib Warning: Citation `hot-internet' on page 2 undefined on input li
+ne 86.
+
+
+Package natbib Warning: Citation `foodweb-model' on page 2 undefined on input l
+ine 86.
+
+[2] [3]
+
+Package natbib Warning: Citation `venkat04' on page 4 undefined on input line 1
+72.
+
+! Misplaced alignment tab character &.
+l.743 Smart, AG, Amaral, LAN, &
+                                Ottino, JM. Cascading failure and robustness...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Package natbib Warning: There were undefined citations.
+
+[4] [5] ("prl manuscript.aux") ) 
+Here is how much of TeX's memory you used:
+ 3176 strings out of 95341
+ 36712 string characters out of 1184220
+ 102115 words of memory out of 1500000
+ 6334 multiletter control sequences out of 110000
+ 17342 words of font info for 64 fonts, out of 1200000 for 2000
+ 14 hyphenation exceptions out of 8191
+ 35i,14n,27p,1129b,417s stack positions out of 5000i,500n,10000p,200000b,5000s
+
+Output written on "prl manuscript.dvi" (5 pages, 29596 bytes).

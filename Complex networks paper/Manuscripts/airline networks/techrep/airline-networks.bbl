@@ -1,0 +1,157 @@
+\begin{thebibliography}{23}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Adler and Smilowitz(2007)]{adler07}
+N.~Adler and K.~Smilowitz.
+\newblock {Hub-and-spoke network alliances and mergers: Price-location
+  competition in the airline industry}.
+\newblock \emph{Transportation Research Part B}, 41\penalty0 (4):\penalty0
+  394--409, 2007.
+
+\bibitem[Alderighi et~al.(2005)Alderighi, Cento, Nijkamp, and
+  Rietveld]{alderighi05}
+M.~Alderighi, A.~Cento, P.~Nijkamp, and P.~Rietveld.
+\newblock {Network competition—the coexistence of hub-and-spoke and
+  point-to-point systems}.
+\newblock \emph{Journal of Air Transport Management}, 11\penalty0 (5):\penalty0
+  328--334, 2005.
+
+\bibitem[Alumur and Kara(2008)]{alumur08}
+S.~Alumur and B.~Kara.
+\newblock {Network hub location problems: The state of the art}.
+\newblock \emph{European Journal of Operational Research}, 190\penalty0
+  (1):\penalty0 1--21, 2008.
+
+\bibitem[Bagler(2008)]{bagler08}
+G.~Bagler.
+\newblock {Analysis of the Airport Network of India as a complex weighted
+  network}.
+\newblock \emph{Physica A: Statistical Mechanics and its Applications}, 2008.
+
+\bibitem[Barrat et~al.(2004)Barrat, Barth\'{e}lemy, Pastor-Satorras, and
+  Vespignani]{barrat04}
+A.~Barrat, M.~Barth\'{e}lemy, R.~Pastor-Satorras, and A.~Vespignani.
+\newblock {The architecture of complex weighted networks}.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 101\penalty0
+  (11):\penalty0 3747, 2004.
+
+\bibitem[Barth\'{e}lemy et~al.(2005)Barth\'{e}lemy, Barrat, Pastor-Satorras,
+  and Vespignani]{barthelemy05}
+M.~Barth\'{e}lemy, A.~Barrat, R.~Pastor-Satorras, and A.~Vespignani.
+\newblock {Characterization and modeling of weighted networks}.
+\newblock \emph{Physica A: Statistical Mechanics and Its Applications},
+  346\penalty0 (1-2):\penalty0 34--43, 2005.
+
+\bibitem[Berry et~al.(1996)Berry, Carnall, and Spiller]{berry96}
+S.~Berry, M.~Carnall, and P.~Spiller.
+\newblock {Airline hubs: costs, markups and the implications of customer
+  heterogeneity}, 1996.
+
+\bibitem[Brueckner(2005)]{brueckner05}
+J.~Brueckner.
+\newblock {Internalization of airport congestion: A network analysis}.
+\newblock \emph{International Journal of Industrial Organization}, 23\penalty0
+  (7-8):\penalty0 599--614, 2005.
+
+\bibitem[Brueckner and Zhang(2001)]{brueckner01}
+J.~Brueckner and Y.~Zhang.
+\newblock {A model of scheduling in airline networks: how a hub-and-spoke
+  system affects flight frequency, fares and welfare}.
+\newblock \emph{Journal of transport Economics and Policy}, 35\penalty0
+  (2):\penalty0 195--222, 2001.
+
+\bibitem[Burghouwt and Hakfoort(2001)]{burghouwt01}
+G.~Burghouwt and J.~Hakfoort.
+\newblock {The evolution of the European aviation network, 1990--1998}.
+\newblock \emph{Journal of Air Transport Management}, 7\penalty0 (5):\penalty0
+  311--318, 2001.
+
+\bibitem[Button(2002)]{button02}
+K.~Button.
+\newblock {Debunking some common myths about airport hubs}.
+\newblock \emph{Journal of Air Transport Management}, 8\penalty0 (3):\penalty0
+  177--188, 2002.
+
+\bibitem[Colizza et~al.(2006)Colizza, Barrat, Barth\'{e}lemy, and
+  Vespignani]{colizza06}
+V.~Colizza, A.~Barrat, M.~Barth\'{e}lemy, and A.~Vespignani.
+\newblock {The role of the airline transportation network in the prediction and
+  predictability of global epidemics}.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 103\penalty0
+  (7):\penalty0 2015, 2006.
+
+\bibitem[Forbes(2008)]{forbes08}
+S.~Forbes.
+\newblock {The effect of air traffic delays on airline prices}.
+\newblock \emph{International Journal of Industrial Organization}, 26\penalty0
+  (5):\penalty0 1218--1232, 2008.
+
+\bibitem[Guida and Maria(2007)]{guida07}
+M.~Guida and F.~Maria.
+\newblock {Topology of the Italian airport network: A scale-free small-world
+  network with a fractal structure?}
+\newblock \emph{Chaos, Solitons and Fractals}, 31\penalty0 (3):\penalty0
+  527--536, 2007.
+
+\bibitem[Guimer\'{a} and Amaral(2004)]{guimera04a}
+R.~Guimer\'{a} and L.~A.~N. Amaral.
+\newblock {Modeling the world-wide airport network}.
+\newblock \emph{The European Physical Journal B}, 38\penalty0 (2):\penalty0
+  381--385, 2004.
+
+\bibitem[Guimer\'{a} et~al.(2005)Guimer\'{a}, Mossa, Turtschi, and
+  Amaral]{guimera05a}
+R.~Guimer\'{a}, S.~Mossa, A.~Turtschi, and L.~Amaral.
+\newblock {The worldwide air transportation network: Anomalous centrality,
+  community structure, and cities' global roles}.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 102\penalty0
+  (22):\penalty0 7794, 2005.
+
+\bibitem[Li and Cai(2004)]{li04}
+W.~Li and X.~Cai.
+\newblock {Statistical analysis of airport network of China}.
+\newblock \emph{Physical Review E}, 69\penalty0 (4):\penalty0 46106, 2004.
+
+\bibitem[McAfee and Te~Velde(2006)]{mcafee06}
+P.~McAfee and V.~Te~Velde.
+\newblock {Dynamic pricing in the airline industry}.
+\newblock \emph{forthcoming in Handbook on Economics and Information Systems,
+  Ed: TJ Hendershott, Elsevier}, 2006.
+
+\bibitem[Mitzenmacher(2004)]{mitzenmacher04}
+M.~Mitzenmacher.
+\newblock {A brief history of generative models for power law and lognormal
+  distributions}.
+\newblock \emph{Internet mathematics}, 1\penalty0 (2):\penalty0 226--251, 2004.
+
+\bibitem[Morrison and Winston(2007)]{morrison07}
+S.~Morrison and C.~Winston.
+\newblock {Another look at airport congestion pricing}.
+\newblock \emph{American Economic Review}, 97\penalty0 (5):\penalty0
+  1970--1977, 2007.
+
+\bibitem[Reynolds-Feighan and Button(1999)]{reynolds99}
+A.~Reynolds-Feighan and K.~Button.
+\newblock {An assessment of the capacity and congestion levels at European
+  airports}.
+\newblock \emph{Journal of Air Transport Management}, 5\penalty0 (3):\penalty0
+  113--134, 1999.
+
+\bibitem[Sienkiewicz and Ho{\l}yst(2005)]{sienkiewicz05}
+J.~Sienkiewicz and J.~Ho{\l}yst.
+\newblock {Statistical analysis of 22 public transport networks in Poland}.
+\newblock \emph{Physical Review E}, 72\penalty0 (4):\penalty0 46127, 2005.
+
+\bibitem[Venkatasubramanian et~al.(2004)Venkatasubramanian, Katare, Patkar, and
+  Mu]{venkatasubramanian04}
+V.~Venkatasubramanian, S.~Katare, P.~Patkar, and F.~Mu.
+\newblock {Spontaneous emergence of complex optimal networks through
+  evolutionary adaptation}.
+\newblock \emph{Computers \& chemical engineering}, 28\penalty0 (9):\penalty0
+  1789--1798, 2004.
+
+\end{thebibliography}

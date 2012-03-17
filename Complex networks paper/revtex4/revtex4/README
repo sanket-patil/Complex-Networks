@@ -1,0 +1,131 @@
+%% ****** Start of file README ****** %
+%%
+%%   This file is part of the APS files in the REVTeX 4 distribution.
+%%   Version 4.0 of REVTeX, August 2001.
+%%
+%%   Copyright (c) 1999, 2000, 2001 The American Physical Society.
+%%
+
+Last updated August 3, 2001
+
+This file describes the contents of this distribution of REVTeX 4.0.
+The definitive source of information about REVTeX 4 is the APS web
+page http://publish.aps.org/revtex4/.
+
+User queries should be directed to revtex@aps.org.
+
+Manifest
+--------
+Only the files under 'Essential files' are required to run REVTeX 4.
+
+                     Essential files
+                     ---------------    
+revtex4.cls  - The REVTeX 4 class file
+aps.rtx      - APS specific REVTeX 4 customizations for Phys. Rev.
+rmp.rtx      - APS specific REVTeX 4 customizations for Rev. Mod. Phys.
+10pt.rtx     - 10 point size class option file for REVTeX.
+11pt.rtx     - 11 point size class option file for REVTeX.
+12pt.rtx     - 12 point size class option file for REVTeX.
+apsrev.bst   - A new custom-bib based BibTeX style file for use with
+               REVTeX 4 for Phys. Rev. style citations.
+apsrmp.bst   - For Rev. Mod. Physics (author/year) style citations 
+revsymb.sty  - A collection of common symbols for use outside of REVTeX.
+
+                     Documentation files
+                     -------------------
+(located in /docs subdirectory)
+auguide.tex  - Author's guide to REVTeX 4 (Note: There is a
+               separate "APS Compuscript Guide for REVTeX 4" detailing
+               restrictions for APS submissions)
+differ.tex   - "Differences between REVTeX 3 and REVTeX 4"
+summary.tex  - "REVTeX 4 Command and Options Summary"
+revbib.tex   - A short introduction to using BibTeX with REVTeX 4 (Not
+               available yet)
+docs.sty     - Used by auguide.tex and differ.tex
+
+                     Sample files
+                     ------------
+(located in /sample subdirectory)
+template.aps - A template for APS authors to follow
+apssamp.tex  - A sample file showing how to achieve certain effects
+               using REVTeX 4
+fig_1.eps    - sample figure for apssamp.tex
+fig_2.eps    - sample wide figure for apssamp.tex
+apssamp.bib  - sample BibTeX source file for apssamp.tex
+
+                     Source files
+                     ------------
+(located in /src subdirectory)
+revtex4.dtx  - The commented source file for revtex4.cls and revsymb.sty.
+revtex4.pdf  - PDF documentation generated from .dtx file
+ltxgrid.dtx  - The commented source file for the ltxgrid package
+ltxgrid.pdf  - PDF documentation generated from .dtx file
+ltxutil.dtx  - The commented source file for the ltxutil package
+ltxutil.pdf  - PDF documentation generated from .dtx file
+ltxdocext.dtx - The commented source file for the ltxdocext package
+ltxdocext.pdf - PDF documentation generated from .dtx file
+textcase.dtx - The commented source file for the textcase package
+revtex4.ins  - A docstrip (version 2.4 or higher) file for extracting
+               revtex4.cls and revsymb.sty from the *.dtx files
+
+Not Included   
+------------
+The following packages are required by REVTeX but are not
+included in this distribution. Please obtain from CTAN
+(Comprehensive TeX Archive Network), e.g. <http://www.ctan.org/>. These
+can also be downloaded from <http://publish.aps.org/revtex4/>.
+
+natbib.dtx   - Version 7 or later needed
+natbib.ins   - LaTeX this to create natbib.sty and natbib
+               documentation from natbib.dtx
+bm.dtx       - Bold math style - part of (current!) standard LaTeX2e tools
+bm.sty       - generated from bm.dtx by running tools.ins
+
+An up-to-date installation of AMS-LaTeX is also required for certain
+documentclass options. Version 2.0 or higher is needed. It is
+available from <http://www.ams.org/tex/>.
+
+Recommended styles and packages
+--------------------------
+By implementing REVTeX as a native LaTeX2e document class, users can now 
+take advantage of many of the well-supported LaTeX2e packages available.
+Here are some that are particularly useful and recommended.
+
+longtable.sty for tables running to multiple pages - part of a
+standard LaTeX2e distribution.
+
+hyperref.sty for hyperlinking - should work well with REVTeX 4.
+
+graphics.sty and graphicx.sty for figure inclusion - part of LaTeX2e's
+standard distribution.
+
+Installation
+------------
+To install REVTeX 4, put revtex4.cls, *.rtx, *.sty, and *.bst (files
+listed under 'Essential Files' above) somewhere in your TEXINPUTS path
+or whereever your TeX software looks for input files. Under the TDS,
+you should install them into $TEXMFLOCAL/tex/latex/revtex4. The *.bst
+files should go under $TEXMFLOCAL/bibtex/bst/revtex4. Run the
+appropriate update command (texhash, initexmf -u, etc.). Install
+required non-REVTeX packages (natbib and bm). Please consult the
+documentaton for your local TeX package for more information. MikTeX
+users should use version MikTeX 2.1.
+
+Credits
+-------
+David Carlisle created the initial versions of REVTeX 4 under
+commission by the APS. Arthur Ogawa has extensively reworked those
+early versions and added much new functionality. Mark Doyle, APS
+Manager of Product Development coordinated the effort. The APS is the
+maintainer of REVTeX 4, and all bugs are our responsibility.  Please
+e-mail complaints to revtex@aps.org.
+
+Backwards compatibility
+-----------------------
+The REVTeX 4 class file has been named revtex4.cls to distinguish it
+from its predecessors. If the class file is copied to revtex.cls,
+files created with earlier versions of REVTeX should still work.
+
+LaTeX2e requirements
+--------------------
+REVTeX 4 requires LaTeX2e [1996/06/01]

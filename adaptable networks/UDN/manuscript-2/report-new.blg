@@ -1,0 +1,31 @@
+This is BibTeX, Version 0.99cThe top-level auxiliary file: C:\Users\sanket\Documents\Research\Purdue Work\adaptable networks\UDN\manuscript-2\report-new.aux
+White space in argument---line 9 of file C:\Users\sanket\Documents\Research\Purdue Work\adaptable networks\UDN\manuscript-2\report-new.aux
+ : \citation{patil-dht,
+ :                      patil-breeding}
+I'm skipping whatever remains of this command
+White space in argument---line 13 of file C:\Users\sanket\Documents\Research\Purdue Work\adaptable networks\UDN\manuscript-2\report-new.aux
+ : \citation{patil-breeding,
+ :                           XXX}
+I'm skipping whatever remains of this command
+White space in argument---line 16 of file C:\Users\sanket\Documents\Research\Purdue Work\adaptable networks\UDN\manuscript-2\report-new.aux
+ : \citation{fan,
+ :                XXX}
+I'm skipping whatever remains of this command
+The style file: splncs.bst
+I couldn't open database file udm10.bib
+---line 64 of file C:\Users\sanket\Documents\Research\Purdue Work\adaptable networks\UDN\manuscript-2\report-new.aux
+ : \bibdata{udm10
+ :               }
+I'm skipping whatever remains of this command
+I found no database files---while reading file C:\Users\sanket\Documents\Research\Purdue Work\adaptable networks\UDN\manuscript-2\report-new.aux
+Warning--I didn't find a database entry for "XXX"
+Warning--I didn't find a database entry for "das"
+Warning--I didn't find a database entry for "borodin"
+Warning--I didn't find a database entry for "patil-dht"
+Warning--I didn't find a database entry for "shenkar"
+Warning--I didn't find a database entry for "patil-breeding"
+Warning--I didn't find a database entry for "fan"
+Warning--I didn't find a database entry for "baruch"
+Warning--I didn't find a database entry for "ortega"
+Warning--I didn't find a database entry for ""
+(There were 5 error messages)

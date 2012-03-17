@@ -1,0 +1,31 @@
+This is pdfTeX, Version 3.141592-1.40.4 (MiKTeX 2.7) (preloaded format=latex 2008.2.24)  21 MAY 2009 13:52
+entering extended mode
+**apssamp.tex
+(apssamp.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, french, loaded.
+
+! LaTeX Error: File `revtex4.cls' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: cls)
+
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.23 
+      
+*** (cannot \read from terminal in nonstop modes)
+
+ 
+Here is how much of TeX's memory you used:
+ 11 strings out of 95341
+ 143 string characters out of 1184220
+ 44877 words of memory out of 1500000
+ 3293 multiletter control sequences out of 110000
+ 3640 words of font info for 14 fonts, out of 1200000 for 2000
+ 14 hyphenation exceptions out of 8191
+ 10i,0n,7p,90b,8s stack positions out of 5000i,500n,10000p,200000b,5000s
+No pages of output.

@@ -1,0 +1,244 @@
+function[] = computegraphproperties(adj_mat, weight_information)
+
+%complete graph
+com_adj = cell(length(adj_mat));
+
+for i = 1 : length(adj_mat) - 1
+    for j = 1 : length(adj_mat) -1 
+        
+        com_adj{i,j} = 1;
+    end
+end
+
+com_adj(:,1) = adj_mat{:,1}; 
+com_adj{1,:} = adj_mat{1,:};
+
+
+
+for i = 1 : length(com_mat) - 1
+    for j = 1 : length(com_mat) -1 
+           
+            node1 = adj_mat{1, j+1}; 
+            
+            node2 = adj_mat{i+1, 1}; 
+            
+            for k = 1 : length(weight_information)
+               if (strcmp(node1,weight_information{k,1}))
+                   
+                   lat1 = weight_information{k,2}; 
+                   lon1 = weight_information{k,3}; 
+                   
+                   break; 
+               end
+               
+            end
+            
+            for k = 1 : length(weight_information)
+               if (strcmp(node2,weight_information{k,1}))
+                   
+                   lat2 = weight_information{k,2}; 
+                   lon2 = weight_information{k,3}; 
+                   break; 
+                   
+               end
+               
+            end
+            
+            d = acos(sin(lat1/57.2958)*sin(lat2/57.2958) + cos(lat1/57.2958)	*   cos(lat2/57.2958)*cos((lon1-lon2)/57.2958));
+
+
+
+            nm = round(3437.747*d);
+            
+            weight = round(nm*1.13636);
+            
+            com_weight_mat(i,j) = weight; 
+    
+    end 
+end
+
+com_max_weight = max(max(com_weight_mat)); 
+
+
+for i = 1 : length(com_weight_mat) 
+    for j = 1 : length(com_weight_mat)
+        
+    
+        com_weight_mat(i,j) = com_weight_mat(i,j)/com_max_weight;
+   
+    end
+end
+
+
+com_sparse_mat = sparse(com_weight_mat);
+
+
+for i = 1 : length(adj_mat) - 1
+    for j = 1 : length(adj_mat) -1 
+        if(adj_mat{i+1, j+1} ~=0)
+           
+            node1 = adj_mat{1, j+1}; 
+            
+            node2 = adj_mat{i+1, 1}; 
+            
+            for k = 1 : length(weight_information)
+               if (strcmp(node1,weight_information{k,1}))
+                   
+                   lat1 = weight_information{k,2}; 
+                   lon1 = weight_information{k,3}; 
+                   
+                   break; 
+               end
+               
+            end
+            
+            for k = 1 : length(weight_information)
+               if (strcmp(node2,weight_information{k,1}))
+                   
+                   lat2 = weight_information{k,2}; 
+                   lon2 = weight_information{k,3}; 
+                   break; 
+                   
+               end
+               
+            end
+            
+            d = acos(sin(lat1/57.2958)*sin(lat2/57.2958) + cos(lat1/57.2958)	*   cos(lat2/57.2958)*cos((lon1-lon2)/57.2958));
+
+
+
+            nm = round(3437.747*d);
+            
+            weight = round(nm*1.13636);
+            
+            weight_mat(i,j) = weight; 
+            
+        else
+            weight_mat(i,j) = 0; 
+            
+        end
+    
+    end 
+end
+
+max_weight = max(max(weight_mat)); 
+
+% fprintf('The maximum weight is: %d \n',max_weight); 
+
+
+
+
+for i = 1 : length(weight_mat) 
+    for j = 1 : length(weight_mat)
+        
+    
+        weight_mat(i,j) = weight_mat(i,j)/max_weight;
+    
+    
+        if(weight_mat(i,j) == 0 & i ~= j) 
+       
+            weight_mat(i,j) = 0; 
+       
+    
+        end
+
+    end
+end
+
+ 
+
+sparse_mat = sparse(weight_mat); 
+
+
+adj_mat(:,1) = []; 
+adj_mat(1,:) = []; 
+
+adj_matrix = cell2mat(adj_mat); 
+
+temp_sparse = sparse(adj_matrix); 
+
+noOfnodes = num_vertices(temp_sparse); 
+
+noOfedges = num_edges(temp_sparse); 
+
+% apwsp = graphallshortestpaths(sparse_mat); 
+
+apwsp = all_shortest_paths(sparse_mat,struct('algname','floyd_warshall'));
+
+com_apwsp = all_shortest_paths(com_sparse_mat,struct('algname','floyd_warshall'));
+
+fprintf('The number of nodes is: %d \n',noOfnodes);
+
+fprintf('The number of edges is: %d \n',noOfedges);
+
+connectance = noOfedges/(noOfnodes*(noOfnodes - 1));
+
+fprintf('The Connectance is: %3.3f \n',connectance); 
+
+% for i = 1 : length(apwsp)
+%     for j = 1 : length(apwsp) 
+%         
+%         fprintf('The apwsp is: %d,  %d,  %d \n',apwsp(i,j),i,j);
+%     end 
+% end
+bc = betweenness_centrality(sparse_mat); 
+
+norm_bc = bc/((noOfnodes-1)*(noOfnodes - 2)); 
+
+
+% fprintf('The betweenness centrality is: %3.3f \n',bc);
+
+% fprintf('The normalized betweenness centrality is: %3.3f \n',norm_bc);
+
+apl = sum(sum(apwsp))/(noOfnodes*(noOfnodes - 1)); 
+
+com_apl = sum(sum(com_apwsp))/(noOfnodes*(noOfnodes - 1)); 
+
+fprintf('The average path length is: %3.3f \n', apl); 
+
+eff_secon = 1/apl; 
+
+fprintf('The efficiency (as given in SECON paper) is: %1.3f \n',eff_secon); 
+
+eff_norm = (2 * (noOfnodes - 1)/noOfnodes)/apl;
+
+com_eff_norm = com_apl/apl;
+
+fprintf('The efficiency normlized wrt star is: %1.3f \n',eff_norm); 
+
+fprintf('The efficiency normlized wrt complete graph is: %1.3f \n',com_eff_norm);
+
+
+highest_bc = max(norm_bc); 
+
+mean_bc = mean(norm_bc); 
+
+
+
+fprintf('The highest node centrality is: %3.3f \n',highest_bc);
+
+fprintf('The mean node centrality is: %3.3f \n',mean_bc);
+
+maxSkew = 1 - 1/noOfnodes;
+skew = highest_bc - mean_bc;
+
+robustness = (maxSkew - skew)/maxSkew;
+
+fprintf('The value of Robustness is: %3.3f \n', robustness); 
+
+beta = robustness/(eff_norm + robustness); 
+
+fprintf('The value of beta is: %3.3f \n',beta); 
+
+
+
+
+
+
+
+
+
+
+
+
+

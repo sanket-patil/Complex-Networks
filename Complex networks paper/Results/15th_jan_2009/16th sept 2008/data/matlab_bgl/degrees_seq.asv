@@ -1,0 +1,31 @@
+% Return the degrees of all nodes, based on the adjacency matrix
+% Valid for a general (un)directed graph
+% Gergana Bounova, March 9, 2006
+
+function [degs,indegree,outdegree] = degrees_seq(adj)
+
+% INPUTs: adj - nxn adjacency matrix
+% OUTPUTs: degs - a vector (1xn) of degrees for every node
+
+% The convention is that the adjacency matrix where an entry of 1
+% in the ij position means that i is connected to j. 
+% This code is valid only for undirected graphs
+
+n = size(adj,2); % number of nodes
+
+if isdirected(adj)
+  indegree = sum(adj);
+  outdegree = sum(adj');
+  degs = indegree + outdegree; % total degree
+  
+else % undirected graph
+
+  if issimple(adj) % simple graph
+    degs = sum(adj);
+  else             % not a simple graph
+    degs = sum(adj) + diag(adj)';  % add self-loops twice
+  end
+  indegree = degs; outdegree = degs;
+ 
+end
+

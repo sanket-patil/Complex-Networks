@@ -1,0 +1,328 @@
+\documentclass[a4paper,10pt]{article}
+\renewcommand{\baselinestretch}{1.5} 
+
+\usepackage{cite}
+
+\begin{document}
+% paper title
+\title{A Graph-Theoretic Analysis of Complex Networks for Efficiency and Robustness}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+%\author{Sanket Patil and Srinath Srinivasa\\
+%Open Systems Laboratory\\
+%International Institute of Information Technology\\
+%Bangalore - 560100, INDIA\\
+%\{sanket.patil, sri\}@iiitb.ac.in}
+
+
+% avoiding spaces at the end of the author lines is not a problem with
+% conference papers because we don't use \thanks or \IEEEmembership
+
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+%
+%\author{\authorblockN{Michael Shell\authorrefmark{1},
+%Homer Simpson\authorrefmark{2},
+%James Kirk\authorrefmark{3},
+%Montgomery Scott\authorrefmark{3} and
+%Eldon Tyrell\authorrefmark{4}}
+%\authorblockA{\authorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: mshell@ece.gatech.edu}
+%\authorblockA{\authorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\authorblockA{\authorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\authorblockA{\authorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+% use only for invited papers
+%\specialpapernotice{(Invited Paper)}
+
+% make the title area
+\maketitle
+%\thispagestyle{plain}
+
+
+% insert page header and footer here for IEEE PDF Compliant
+%\fancypagestyle{plain}{
+%\fancyhf{}	% clear all header and footer fields
+%\fancyfoot[L]{978-1-4244-2794-9/09/\$25.00~\copyright~2009 IEEE} 
+%\fancyfoot[C]{}
+%\fancyfoot[R]{SMC 2009}
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{0pt}
+%}
+%
+%
+%\pagestyle{fancy}{
+%\fancyhf{} 
+%\fancyfoot[R]{SMC 2009}}
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{0pt}
+
+
+\begin{abstract}
+This work presents a study of the efficiency and robustness properties of several complex networks. We report a detailed analysis of the topologies of major US domestic airlines networks. We also analyze other classes of complex networks, such as food-webs, trade networks and supply-chains. Interesting structural motifs can be observed both within and across classes of networks. Some of these motifs are potential design principles for complex networks.
+\end{abstract}
+
+
+%\begin{IEEEkeywords}
+\textbf{Keywords:} Complex Networks, Efficiency, Robustness, Network Design, Optimal Networks
+%\end{IEEEkeywords}
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+%
+% for peerreview papers, inserts a page break and creates the second title.
+% Will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+\section{Introduction}
+% no \PARstart
+Complex Networks are characterized by non-trivial structural properties. There is a lot of research interest in understanding the structural properties of complex networks, especially following the seminal work by Strogatz, Albert and Barab\`{a}si~\cite{albert02, barabasi, strogatz}. Classes of complex networks have been studies in search of specific optimal properties such as diameter~\cite{barabasi99}, degree distribution and clustering coefficient~\cite{watts}.
+
+Complex networks exhibit a scale-free nature with a power law degree distribution. Strogatz and Watts~\cite{watts} show that several complex networks are ``small-worlds'' with small average path lengths and high clustering coefficients. Kleinberg~\cite{kleinberg} provides a theoretical framework for small-world networks by developing exact conditions under which small-worlds occur. Newman~\cite{newman} reports the existence of community structures in disparate complex networks.
+
+Various complex networks have been studied in literature, such as metbolic networks~\cite{guimera07, amaral08}, airline networks~\cite{guimera04, amaral05}, food webs, protein interaction networks, social networks and trade networks~\cite{vespignani}. Unlike random graph models, complex networks have either \textit{evolved} over time for survival or have been \textit{designed} for performance. They are teleological in the sense that each complex network has (or is built to serve) a purpose.
+
+It is the underlying network structure or topology that impacts not only the performance of a complex network, but also its survival in the phase of environmental uncertainties. Hence, a detailed understanding of the underlying structures of complex networks is warranted. In this work, we model different classes of compelx networks using a graph theoretic framework and study their properties with respect to three parameters critical to network optimality: efficiency, robustness and cost.
+
+This formalism is based on the work of Venkatasubramanian et al.~\cite{venkat04}, who study the emergence of network topologies under different efficiency and robustness constraints. They propose a formalism based on the Darwinian evolutionary theory. Efficiency indicates the average case or short term survival of a complex network; whereas robustness indicates the worst case or the long term survival. A selection pressure variable decides the trade-off between efficiency and robustness. Using these measures, they let topologies evolve under different trade-offs through a genetic algorithm process. Efficiency is defined in terms of the average path length of the resulting graph topology and robustness in terms of the number of components a node deletion causes in the graph. The star topology emrges as most efficient and least robust, when the selection pressure is completely on efficiency. The circle topology emerges as the most robust and least efficient, when the selection pressure is completely on robustness. Hub and spoke structures of diffrent types emerge for intermediate selection pressures. 
+
+We extend this formalism to analyze the efficieny and robustness of several classes of complex networks such as airline networks, food-webs and supply-chains. We use several different measures of efficiency and robustness that reflect the different aspects of optimality in networks to provide a thorough analysis. We observe optimal motifs within classes of networks as well as across classes. We conjecture that these optimal motifs are potential underpinnings for the design of complex networks.
+
+We begin by introducing the graph theoretic formalism (section \ref{sec:formalism}). We briefly discuss the different complex networks that we studied (section \ref{sec:networks}). We then present a thorough analysis of the efficiency and robustness of each class of complex networks (section \ref{sec:analysis}). We present a philosophical discussion of interesting design principles in section \ref{sec:discussion}. Finally, we position this work with respect to existing literature and indicate future directions \ref{sec:rellit}.
+
+\section{A Graph Theoretic Formalism}
+
+\subsection{Definitions}
+
+Networks are modelled as graphs. In the rest of the paper, the terms of graph and network are used interchangeably to mean the same.
+
+A graph, $G(V, E)$ is a set of of vertices (or nodes) $V = \{1, 2, ..., n\}$ and a set of edges (or links) $E = \{e_{ij}: i \in V\ and\ j \in V\}$. A node can represent a machine, a human or a cell in a network. An edge can represent a \textit{relation} between two nodes. For example, in a social network, an edge represents an ``acquaintance'' relation. In case of a food web an edge is a ``predator-prey'' relation. An edge can also represent \textit{flow} of material and/or information as in supply chains and computer networks.
+
+Edges can be \textit{undirected} (or bidirected) or \textit{directed}, indicating the direction of a relation or flow. Edge \textit{weights} are used to convey additional (extra-topological) information. For example: in an airline network, weight on an edge can be distance, or estimated flight time.
+
+\textit{Degree} is the number of edges incident on a node. If the edges are directed, then we measure \textit{indegree} (the number of incoming edges) and \textit{outdegree} (the number of outgoing edges) of a node. The degree sequence of a graph is the sequence of node degrees. The degree distribution, $P(k)$, of a graph is the fraction of the nodes in the graph, $n$, that have a degree $k$.
+
+A \textit{path} in a graph is a sequence of edges from a source node to a destination node. The number of edges in a path is called its \textit{pathlength}. If the edges have weights on them, then the pathlength of a path is the  sum of the weights. A \textit{shortest path} between a source and a destination is a path between the two nodes that has the smallest pathlength.
+
+The \textit{average path length} (APL) of a graph is computed by computing the average of the shortest pathlengths between all pairs of nodes in the graph. The longest of the all pairs shortest paths is called a diameter path, and its pathlength is called the \textit{diameter} of the graph.
+
+While the diameter is a property of a network, similar definitions at the level of individual nodes are also useful. For a node, the longest pathlength among its shortest paths is called the node's \textit{eccentricity}. It is the greatest separation of a node from any other node in the network. Diameter is the highest eccentricity across all nodes in the network. Similarly, the smallest eccentricity across all nodes in the network is called the \textit{radius} of the network.
+
+Various measures of \textit{centrality} of nodes in a network are used to determine the relative ``importance'' of the nodes within a network. Below we define some of the important ones.
+
+\textit{Degree Centrality} is usually the same as the degree sequence. However, it is often represented in a normalized measure. We normalize the degree centrality of a node against the total degree in the graph, $\sum_{i}k_{i}$, where $k_{i}$ is the degree of $i$. The normalized degree centrality of a node $i$, $C_{D}(i)$, is defined as -
+\[C_{D}(i) = \frac{k_{i}}{\sum_{i}k_{i}}\]
+
+\textit{Betweenness Centrality} of a node is measured in terms of the number of times the node occurs in shortest paths as an intermediate node. For a node $i$, and for every node pair $(j, k)$ in a graph, the betweenness centrality of $i$, $C_{B}(i)$, is defined as -
+\[C_{B}(i) = \sum_{j \ne i \ne k, j \ne k}\frac{\sigma_{jk}^{i}}{\sigma_{jk}}\]
+
+Here, $\sigma_{jk}$, is the number of shortest paths between $j$ and $k$. and $\sigma_{jk}^{i}$, is the number of shortest paths between $j$ and $k$ via $i$.
+
+\textit{Betweenness Centrality} of an edge is measured in terms of the number of times the edge occurs in shortest paths. For an edge $e_{ij}$, and for every node pair $(k, l)$ in a graph, the betweenness centrality of $e_{ij}$, $C_{B}(e_{ij})$, is defined as - 
+\[C_{B}(e_{ij}) = \sum_{k \ne l}\frac{\sigma_{kl}^{e_{ij}}}{\sigma_{kl}}\]
+
+\textit{Closeness Centrality} of a node has the connotation of the average path length of that node. In other words, it is the average distance from the node to any other node. For a node $i$, the closeness centrality, $C_{cl}(i)$, is defined as -
+
+\[C_{cl}(i) = \frac{\sum_{j, j \ne i} pl(i, j)}{n - 1}\]
+
+Here, $pl(i, j)$ is the pathlength between $i$ and $j$.
+
+Often, the performance of a network depends on how well the network is connected. A network is said to be \textit{strongly connected} if there exists a path from any node to any other node in the network. A network is said to be \textit{disconncted} otherwise. Since node and edge failures can happen in a network, it is important to measure the resilience of the network in the face of failures. The \textit{vertex cut} of a network is a set of vertices, whose removal renders the network disconnected. The \textit{minimal vertex cut} is the smallest of such vertex cuts: it is the minimum number of vertices whose removal disconnects a network. Similarly, \textit{edge cut} and \textit{minimal edge} cut are defined.
+
+The vertex or node connectivity of a network is the size of the minimal vertex cut. The edge connectivity of a network is the size of the minimum edge cut. There is a well known theorem by Menger which states that the maximum number of \textit{independent paths} in a network is equal to the size of the minimal cut. A set of paths is said to be \textit{vertex independent}, if there is no shared vertex. Similarly, a set of paths is \textit{edge independent}, if there is no shared edge. 
+
+\subsection{Critical Parameters}
+
+\subsubsection{Efficiency}
+Efficiency is indicative of the short-term survival of a network. Survival of a network entails \textit{communication} of a node with other nodes. A certain cost is associated with communication. Efficiency measures the cost of \textit{communication} in a network. There are a number of ways in which efficiency can be defined. The \textit{diameter} of a network is the upper bound on the communication cost in the network. The \textit{average path length} (APL) gives the communication cost on average. Maximizing the symmetry in the distribution of distances between pairs of nodes can also serve as a useful measure of efficiency. Therefore, per node \textit{eccentricity} (longest of all shortest paths from a node) and \textit{closeness centrality} values can also be used to define efficiency.
+
+The worst diameter for a connected graph of $n$ nodes is $n - 1$, which is the diameter of a straight line graph, in case of undirected graphs, and a circle in case of directed graphs. The best diameter is $1$, which is the diameter of a clique (complete graph). In other words, a topology is most efficient if the diameter is $1$, and least efficient if it is  $n - 1$. We map a diameter \textit{d} that falls in the interval $\left[1, n - 1\right]$, to a value of efficiency in the interval $\left[0, 1\right]$, as:
+
+\[ \eta = 1 - \frac{d - 1} {n - 2} \]
+
+By this definition, a straight line topology has an $\eta$ of 0, a circular topology has an $\eta$ nearing 0.5, a clique has an $\eta$ of 1 and so on.
+
+The worst APL for a connected undirected graph of $n$ nodes, which occurs again for a straight line, is $\frac{n + 1}{3}$. Similarly, for directed graphs, the worst case APL, the APL of the circle, is $\frac{n}{2}$. The best case APL in either case, is $1$, for the clique. Thus, when measured in terms of APL, efficiency:
+
+\[\eta = 1 - 3\frac{apl - 1} {n - 2},\ for\ undirected\ graphs\]
+\[\eta = 1 - 2\frac{apl - 1} {n - 2},\ for\ directed\ graphs\]
+
+\subsubsection{Robustness}
+Robustness measures the resilience of a network in the face of node and edge failures. Robustness is often defined in terms of the \textit{skew} in the \textit{importance} of nodes and edges. As such, centrality measures viz; degree, node betweenness and edge betweenness distributions can be used. When there is a skew in the centrality measures, a small number of nodes and/or edges are more important than the others. Thus, their failure affects the network's performance much more than failures in the rest of the network. On the other hand, a symmetric centrality distribution ensures robustness to random as well as targetted node/edge failures.
+
+One of the definitions of robustness we use is skew in degree centrality. We define this as the difference in the maximum degree in the graph ($\hat{p}$) and the mean degree of the nodes ($\bar{p}$). For a connected graph of $n$ nodes, the worst skew occurs for the star topology. The central node has a degree of $n - 1$ and all the nodes surrounding it have a degree of 1. Therefore, the worst skew is $\frac{(n - 1)(n - 2)}{n}$. The best skew is 0, when all the nodes have the same degree. This occurs when the topologies are \textit{regular} graph topologies as in a circular topology or a clique. This holds for both directed and undirected graphs. Thus,
+
+\[\rho = 1 - \frac{n(\hat{p} - \bar{p})}{(n - 1)(n - 2)}\]
+
+Another way to measure robustness is in terms of \textit{betweenness}. 
+
+Another way to measure robustness is in terms of \textit{connectivity} ($\lambda$). Connectivity is the minimum number of nodes or edges whose removal renders the network disconnected. In case of an undirected graph, the tree topologies have the worst connectivity of $1$, and the circle has the worst connectivity of $1$ in directed graphs. For both cases, the clique has the best connectivity, $n - 1$. Thus, robustness, when defined in terms of connectivity is:
+\[\rho = \frac{\lambda - 1}{n - 2}\]
+
+\subsubsection{Cost}
+The minimum number of edges ($e_{min}$) required to have a connected undirected graph is $n - 1$ and $n$ is case of a directed graph. We do not associate any cost to a minimally connected graph. Any ``extra'' edge has an associated cost. All extra edges cost the same. An undirected clique has the highest cost, with $\hat{e} = \frac{n(n - 1)}{2}$ (and $\hat{e} = n(n - 1)$, for directed) number of edges. Thus, the cost of a topology is defined as a ratio of the number of extra edges in a topology to the number of extra edges in the clique with the same number of nodes.
+
+\[ k = \frac{e - e_{min}} {\hat{e} - e_{min}} \]
+
+In case of weighted graphs, cost is measured in terms of the total weight over edges.
+
+\subsubsection{Selection Pressure Estimate}
+Venkatasubramanian et al.~\cite{venkat04} propose the selection pressure variable $\alpha$ that decides the trade-off between efficiency and robustness during the design process of a complex network. In this work, we propose a complementary measure $\beta$ which is an \textit{estimate} of $\alpha$ that might have been used to design a particular network topology.
+
+\section{Classes of Complex Networks}
+\subsection{Foodwebs}
+\subsection{Trade Networks}
+\subsection{Supply Chain Networks}
+\subsection{Airline Networks}
+
+\section{Performance Analyses}
+\subsection{Efficiency Analyses}
+\subsection{Robustness Analyses}
+\subsection{Comparison with Random Graphs}
+\subsection{Interesting Design Motifs}
+
+\section{Related Literature}
+
+\section{Future Work}
+%* What are complex networks: (1) man made (2) natural\\
+%
+%* Special structural properties -- structure influences function\\
+%
+%* Efficiency, robustness and cost as three principal dimensions.\\
+%
+%* In this work, we study: (1) structural properties (2) subject a variety of complex n/ws to graph theoretic analysis (2) wrt eff, rob and cost.\\
+
+
+%\section{Related Literature}
+%Subsection text here.
+%
+%
+%
+%\subsection{Efficiency measures}
+%* APL\\
+%* Diameter\\
+%
+%\subsection{Robustness measures}
+%* SECON measures\\
+%* Degree distribution based\\
+%* Connectivity based\\
+%* Centrality based measures\\
+%
+%\subsection{Cost measures}
+%* Redundancy\\
+%* Density\\
+%
+%\section{Efficiency and Robustness Analyses}
+%
+%\section{Discussion}
+%
+
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class option
+% should be used if it is desired that the figures are to be displayed while
+% in draft mode.
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+%
+% \begin{figure}
+% \centering
+% \includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex
+% \caption{Simulation Results}
+% \label{fig_sim}
+% \end{figure}
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfigure.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfigure command, the
+% \label for the overall fgure must come after \caption.
+% \hfil must be used as a separator to get equal spacing
+%
+% \begin{figure*}
+% \centerline{\subfigure[Case I]{\includegraphics[width=2.5in]{subfigcase1}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex
+% \label{fig_first_case}}
+% \hfil
+% \subfigure[Case II]{\includegraphics[width=2.5in]{subfigcase2}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex
+% \label{fig_second_case}}}
+% \caption{Simulation results}
+% \label{fig_sim}
+% \end{figure*}
+
+
+% An example of a floating table. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+% \begin{table}
+% increase table row spacing, adjust to taste
+% \renewcommand{\arraystretch}{1.3}
+% \caption{An Example of a Table}
+% \label{table_example}
+% \begin{center}
+% Some packages, such as MDW tools, offer better commands for making tables
+% than the plain LaTeX2e tabular which is used here.
+% \begin{tabular}{|c||c|}
+% \hline
+% One & Two\\
+% \hline
+% Three & Four\\
+% \hline
+% \end{tabular}
+% \end{center}
+% \end{table}
+
+
+\section{Conclusion}
+The conclusion goes here.
+
+\section*{Acknowledgment}
+The authors would like to thank...
+\begin{thebibliography}{1}
+\bibitem{albert02}
+R. Albert and A.-L. Barab\'{a}si. \textit{Statistical mechanics of complex networks}. Review of Modern Physics, 74, pp. 47-97, 2002.
+
+\bibitem{barabasi}
+A.-L. Barab\'{a}si. \textit{Scale-Free Networks}. Scientific American, 288, pp. 60-69, May 2003.
+
+\bibitem{strogatz}
+S.H. Strogatz. \textit{Exploring complex networks}. Nature, Vol. 410, Issue 6825, pp. 268-276, 2001.
+
+\bibitem{barabasi99}
+R. Albert, H. Jeong and A.-L. Barab\'{a}si. \textit{Diameter of the world-wide web}. Nature, Vol. 401, Issue 6749, pp. 130-131, 1999.
+
+\bibitem{watts}
+D.J. Watts and S.H. Strogatz. \textit{Collective dynamics of 'small-world' networks}. Nature, Vol. 393, Issue 6684, pp. 440-442,v 1998.
+
+\bibitem{kleinberg}
+J.M. Kleinberg. \textit{Navigation in a small world}. Nature, Vol. 406, Issue 6798, pp. 845, 2000.
+
+\bibitem{newman}
+M.E.J Newman. \textit{Modularity and community structure in networks}. In proc. National Academy of Sciences, Vol. 103, No. 23, pp. 8577-8582, 2006.
+
+\end{thebibliography}
+
+
+
+\end{document}
+
+

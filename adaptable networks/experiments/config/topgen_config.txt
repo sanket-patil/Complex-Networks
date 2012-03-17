@@ -1,0 +1,4 @@
+IP_PARAMS_FILE=topgen_inputs/input_parameters
+IP_LIST_FILE=topgen_inputs/input_list
+OUTPUT_DIR=topgen_outputs/
+OPT_MEASURES=config/optimality_measures.txt

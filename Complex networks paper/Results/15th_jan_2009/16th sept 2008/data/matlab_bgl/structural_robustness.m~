@@ -1,0 +1,67 @@
+function [avg_case_sr,worst_case_sr] = structural_robustness(adj_matrix)
+ 
+avg_case_sr = 0; 
+worst_case_sr = 0; 
+
+case_sr = 0; 
+
+local_matrix = adj_matrix; 
+
+%sparse_mat = sparse(adj_matrix); 
+
+%[S, C] = graphconncomp(sparse_mat); 
+
+
+eff_access = 0; 
+struct_robust(length(adj_matrix)) = 0; 
+
+
+for i = 1 : length(adj_matrix) 
+    
+    local_matrix(i,:) = []; 
+    
+    local_matrix(:,i) = []; 
+    
+    local_sparse_mat = sparse(local_matrix); 
+    
+    [local_S, local_C] = graphconncomp(local_sparse_mat); 
+    
+    counter(local_S) = 0; 
+    
+    for j = 1 : local_S
+        
+        for m = 1 : local_C
+            
+            if (local_C(m) == j)
+                
+                counter(j) = counter(j) + 1; 
+                
+                
+                
+            end
+        end
+    end
+     
+    
+    for n = 1 : local_S 
+        
+        eff_access = eff_access + (counter(n)-1); 
+        
+        
+    end
+    
+    struct_robust(i) = eff_access/(length(adj_matrix)-2); 
+    
+    
+
+end
+
+for k = 1 : length(adj_matrix)
+    
+case_sr = case_sr + e(k); 
+
+end
+
+avg_case_sr = case_sr/length(adj_matrix); 
+
+

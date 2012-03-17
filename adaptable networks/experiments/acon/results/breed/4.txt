@@ -1,0 +1,55 @@
+Average Fitness: 0.8478025
+Max fitness: 1.0
+fittest: ['3 4', '2 4', '4 1']
+Min fitness: 0.25
+
+Average Fitness: 0.813531899715
+Max fitness: 1.0
+fittest: ['1 4', '3 4', '2 1']
+Min fitness: 0.25
+
+Average Fitness: 0.821419427518
+Max fitness: 1.0
+fittest: ['4 2', '1 4', '2 3']
+Min fitness: 0.25
+
+Average Fitness: 0.835838385897
+Max fitness: 1.0
+fittest: ['4 1', '1 2', '3 1']
+Min fitness: 0.25
+
+Average Fitness: 0.832538386982
+Max fitness: 1.0
+fittest: ['1 3', '4 2', '4 3']
+Min fitness: 0.25
+
+Average Fitness: 0.855946632783
+Max fitness: 1.0
+fittest: ['1 3', '2 4', '3 4']
+Min fitness: 0.25
+
+Average Fitness: 0.857851640222
+Max fitness: 1.0
+fittest: ['4 1', '4 2', '3 4']
+Min fitness: 0.25
+
+Average Fitness: 0.852301105958
+Max fitness: 1.0
+fittest: ['1 3', '1 2', '4 1']
+Min fitness: 0.25
+
+Average Fitness: 0.859979685119
+Max fitness: 1.0
+fittest: ['1 3', '4 1', '3 2']
+Min fitness: 0.25
+
+Average Fitness: 0.8554400978
+Max fitness: 1.0
+fittest: ['3 4', '2 3', '3 1']
+Min fitness: 0.25
+
+Average Fitness: 0.851401368185
+Max fitness: 1.0
+fittest: ['3 1', '3 2', '4 3']
+Min fitness: 0.25
+

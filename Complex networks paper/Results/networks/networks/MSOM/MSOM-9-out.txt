@@ -1,0 +1,211 @@
+No of Nodes: 49
+
+No of Edges: 52
+
+Connectance/Density: 0.022108843537414966
+
+Cost: 0.0017730496453900709
+
+Strongly connected: no
+
+No. of Paths: 442
+
+Connectivity: 0.1879251700680272
+
+Diameter: undefined
+
+Efficiency (upper bound): undefined
+
+APL: 2.746606334841629
+
+Efficiency (abs. avg., SECON): 0.3640856672158155
+
+Efficiecy (normalized wrt star, SECON): 0.5461285008237232
+
+---------------------------------
+
+Degree Distribution
+
+InDegree of Manuf_0001: 6
+InDegree of Trans_0002: 1
+InDegree of Manuf_0002: 5
+InDegree of Dist_0001: 1
+InDegree of Dist_0002: 1
+InDegree of Dist_0003: 1
+InDegree of Dist_0004: 1
+InDegree of Manuf_0003: 6
+InDegree of Dist_0005: 1
+InDegree of Dist_0006: 1
+InDegree of Dist_0007: 1
+InDegree of Dist_0008: 1
+InDegree of Dist_0009: 1
+InDegree of Dist_0010: 1
+InDegree of Dist_0011: 1
+InDegree of Dist_0012: 1
+InDegree of Dist_0013: 1
+InDegree of Dist_0014: 1
+InDegree of Dist_0015: 1
+InDegree of Manuf_0004: 6
+InDegree of Dist_0016: 1
+InDegree of Dist_0017: 1
+InDegree of Dist_0018: 1
+InDegree of Dist_0019: 1
+InDegree of Dist_0020: 1
+InDegree of Dist_0021: 1
+InDegree of Dist_0022: 1
+InDegree of Dist_0023: 1
+InDegree of Dist_0024: 1
+InDegree of Dist_0025: 1
+InDegree of Dist_0026: 1
+InDegree of Part_0001: 0
+InDegree of Part_0002: 0
+InDegree of Part_0003: 0
+InDegree of Part_0004: 0
+InDegree of Part_0005: 0
+InDegree of Part_0006: 0
+InDegree of Part_0007: 0
+InDegree of Trans_0001: 1
+InDegree of Part_0008: 0
+InDegree of Trans_0003: 1
+InDegree of Part_0009: 0
+InDegree of Part_0010: 0
+InDegree of Part_0011: 0
+InDegree of Part_0012: 0
+InDegree of Part_0013: 0
+InDegree of Part_0014: 0
+InDegree of Part_0015: 0
+InDegree of Part_0016: 0
+
+OutDegree of Manuf_0001: 1
+OutDegree of Trans_0002: 3
+OutDegree of Manuf_0002: 4
+OutDegree of Dist_0001: 0
+OutDegree of Dist_0002: 0
+OutDegree of Dist_0003: 0
+OutDegree of Dist_0004: 0
+OutDegree of Manuf_0003: 11
+OutDegree of Dist_0005: 0
+OutDegree of Dist_0006: 0
+OutDegree of Dist_0007: 0
+OutDegree of Dist_0008: 0
+OutDegree of Dist_0009: 0
+OutDegree of Dist_0010: 0
+OutDegree of Dist_0011: 0
+OutDegree of Dist_0012: 0
+OutDegree of Dist_0013: 0
+OutDegree of Dist_0014: 0
+OutDegree of Dist_0015: 0
+OutDegree of Manuf_0004: 11
+OutDegree of Dist_0016: 0
+OutDegree of Dist_0017: 0
+OutDegree of Dist_0018: 0
+OutDegree of Dist_0019: 0
+OutDegree of Dist_0020: 0
+OutDegree of Dist_0021: 0
+OutDegree of Dist_0022: 0
+OutDegree of Dist_0023: 0
+OutDegree of Dist_0024: 0
+OutDegree of Dist_0025: 0
+OutDegree of Dist_0026: 0
+OutDegree of Part_0001: 1
+OutDegree of Part_0002: 1
+OutDegree of Part_0003: 1
+OutDegree of Part_0004: 1
+OutDegree of Part_0005: 1
+OutDegree of Part_0006: 1
+OutDegree of Part_0007: 1
+OutDegree of Trans_0001: 2
+OutDegree of Part_0008: 1
+OutDegree of Trans_0003: 1
+OutDegree of Part_0009: 1
+OutDegree of Part_0010: 1
+OutDegree of Part_0011: 3
+OutDegree of Part_0012: 1
+OutDegree of Part_0013: 1
+OutDegree of Part_0014: 2
+OutDegree of Part_0015: 1
+OutDegree of Part_0016: 1
+
+InDegree Distribution (normalized)
+
+InDD: [ 0.11538461538461539 0.019230769230769232 0.09615384615384616 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.11538461538461539 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.11538461538461539 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.019230769230769232 0.0 0.019230769230769232 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 ]
+
+OutDegree Distribution (normalized)
+
+OutDD: [ 0.019230769230769232 0.057692307692307696 0.07692307692307693 0.0 0.0 0.0 0.0 0.21153846153846154 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.21153846153846154 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.038461538461538464 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.019230769230769232 0.057692307692307696 0.019230769230769232 0.019230769230769232 0.038461538461538464 0.019230769230769232 0.019230769230769232 ]
+
+Regularity Index (for indegree): 0.8927304964539007
+
+Regularity Index (for outdegree): 0.7841312056737588
+
+Mean indegree: 1.0612244897959184
+
+Highest indegree: 6
+
+Mean outdegree: 1.0612244897959184
+
+Highest outdegree: 11
+
+
+---------------------------------
+
+Node Eccentricity Values
+
+Ecc: [3 2 1 und und und und 1 und und und und und und und und und und und 1 und und und und und und und und und und und 4 4 4 4 4 4 3 2 3 2 2 2 2 2 2 2 2 2 ]
+
+Highest Eccentricity (diameter): 4
+
+Least Eccentricity (radius): 1
+
+Average Eccentricity: 2.5217391304347827
+
+
+Most Eccentric Nodes (peripheral nodes): 
+
+Part_0001 Part_0002 Part_0003 Part_0004 Part_0005 Part_0006 
+
+Least Eccentric Nodes (central nodes): 
+
+Manuf_0002 Manuf_0003 Manuf_0004 
+
+
+---------------------------------
+
+Centrality Measures
+
+Node Centrality (Betweenness) Distribution: 
+
+Node Centrality: [ 0.46153846153846156 0.5205128205128206 0.13333333333333333 0.0 0.0 0.0 0.0 0.39487179487179486 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.39487179487179486 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.04358974358974359 0.0 0.03076923076923077 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 ]
+
+Highest Node Centrality: 0.5205128205128206
+
+Mean Node Centrality: 0.04039769754055469
+
+Most Central Nodes (highly loaded nodes): 
+
+Trans_0002 
+
+Least Central Nodes (less loaded nodes): 
+
+Dist_0001 Dist_0002 Dist_0003 Dist_0004 Dist_0005 Dist_0006 Dist_0007 Dist_0008 Dist_0009 Dist_0010 Dist_0011 Dist_0012 Dist_0013 Dist_0014 Dist_0015 Dist_0016 Dist_0017 Dist_0018 Dist_0019 Dist_0020 Dist_0021 Dist_0022 Dist_0023 Dist_0024 Dist_0025 Dist_0026 Part_0001 Part_0002 Part_0003 Part_0004 Part_0005 Part_0006 Part_0007 Part_0008 Part_0009 Part_0010 Part_0011 Part_0012 Part_0013 Part_0014 Part_0015 Part_0016 
+
+
+Edge Centrality Distribution: 
+
+Edge Centrality: [ 0.4751131221719457 0.03167420814479638 0.03167420814479638 0.03167420814479638 0.03167420814479638 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.033936651583710405 0.07013574660633484 0.07013574660633484 0.07013574660633484 0.07013574660633484 0.07013574660633484 0.07013574660633484 0.04072398190045249 0.029411764705882353 0.011312217194570135 0.011312217194570135 0.011312217194570135 0.027149321266968326 0.027149321266968326 0.027149321266968326 0.027149321266968326 0.027149321266968326 0.027149321266968326 0.027149321266968326 0.027149321266968326 0.02262443438914027 0.05429864253393665 0.09049773755656108 0.2171945701357466 0.2171945701357466 0.05429864253393665 ]
+
+Highest Edge Centrality: 0.4751131221719457
+
+Mean Edge Centrality: 0.05281935259310825
+
+Most Central Edges (highly loaded edges): 
+
+Manuf_0001--Trans_0002 
+
+Least Central Edges (less loaded edges): 
+
+Part_0009--Manuf_0002 Part_0010--Manuf_0002 Part_0011--Manuf_0002 
+
+
+----------------------
+

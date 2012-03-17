@@ -1,0 +1,17 @@
+\beamer@endinputifotherversion {3.07pt}
+\beamer@sectionintoc {2}{Introduction}{3}{0}{1}
+\beamer@subsectionintoc {2}{1}{Definition}{3}{0}{1}
+\beamer@subsectionintoc {2}{2}{Representation}{13}{0}{1}
+\beamer@sectionintoc {3}{Topological Features}{17}{0}{2}
+\beamer@subsectionintoc {3}{1}{Scale-free Nature}{17}{0}{2}
+\beamer@subsectionintoc {3}{2}{``Small World'' properties}{27}{0}{2}
+\beamer@subsectionintoc {3}{3}{Other features}{53}{0}{2}
+\beamer@sectionintoc {4}{Philosophy}{55}{0}{3}
+\beamer@subsectionintoc {4}{1}{Emergence}{64}{0}{3}
+\beamer@subsectionintoc {4}{2}{Machines vs Societies}{67}{0}{3}
+\beamer@subsectionintoc {4}{3}{Self Interest}{72}{0}{3}
+\beamer@sectionintoc {5}{Design}{75}{0}{4}
+\beamer@subsectionintoc {5}{1}{Systems Design: Desiderata}{75}{0}{4}
+\beamer@subsectionintoc {5}{2}{Complex Systems Design}{79}{0}{4}
+\beamer@sectionintoc {6}{Analyses}{85}{0}{5}
+\beamer@sectionintoc {7}{Conclusions}{118}{0}{6}

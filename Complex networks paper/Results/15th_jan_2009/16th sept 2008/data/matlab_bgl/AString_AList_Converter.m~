@@ -1,0 +1,58 @@
+function [Elist] = AString_AList_Converter(Estring)
+
+% This is code for converting list of strings to an adjacency List.
+
+% Written by Narendra Sharma March 30, 2008.
+
+
+N=size(Estring,1);
+
+
+
+Elist =zeros(N); % to initialize the square matrix (NXN) with all zeroes.
+
+value = 1;
+
+nmae = []; 
+
+for n = 1 : 2
+
+    for m = 1 : size(Estring,1)
+
+        if (ischar(Estring{m,n}))
+
+            temp = Estring{m,n};
+
+            name(length(name) + 1) = temp; 
+            
+            for p = 1 : size(Estring,1)
+
+                for q = 1:2
+
+
+                    if(strcmp(temp,Estring{p,q}))
+
+                        Estring{p,q} = value;
+                    end
+
+
+                end
+            end
+
+            value = value + 1;
+
+        end
+    end
+end
+
+
+for i=1:size(Estring,1)
+
+    Elist(Estring{i,1}, Estring{i,2})=1;
+
+    %  AMat(Elist(i,2), Elist(i,1))=1;
+
+end
+
+
+save

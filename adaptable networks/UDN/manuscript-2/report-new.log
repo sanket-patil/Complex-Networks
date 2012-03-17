@@ -1,0 +1,654 @@
+This is pdfTeX, Version 3.141592-1.40.4 (MiKTeX 2.7) (preloaded format=latex 2008.2.24)  5 JAN 2010 14:18
+entering extended mode
+**report-new.tex
+(report-new.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, french, loaded.
+(llncs.cls
+Document Class: llncs 2002/01/28 v2.13 
+ LaTeX document class for Lecture Notes in Computer Science
+("C:\Program Files\MiKTeX 2.7\tex\latex\base\article.cls"
+Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.7\tex\latex\base\size10.clo"
+File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files\MiKTeX 2.7\tex\latex\tools\multicol.sty"
+Package: multicol 2006/05/18 v1.6g multicolumn formatting (FMi)
+\c@tracingmulticols=\count87
+\mult@box=\box26
+\multicol@leftmargin=\dimen103
+\c@unbalance=\count88
+\c@collectmore=\count89
+\doublecol@number=\count90
+\multicoltolerance=\count91
+\multicolpretolerance=\count92
+\full@width=\dimen104
+\page@free=\dimen105
+\premulticols=\dimen106
+\postmulticols=\dimen107
+\multicolsep=\skip43
+\multicolbaselineskip=\skip44
+\partial@page=\box27
+\last@line=\box28
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count93
+\c@finalcolumnbadness=\count94
+\last@try=\dimen108
+\multicolovershoot=\dimen109
+\multicolundershoot=\dimen110
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+)
+\c@chapter=\count95
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 360.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 361.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 362.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 363.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 364.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 365.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 366.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 367.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 368.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 369.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 370.
+\tocchpnum=\dimen111
+\tocsecnum=\dimen112
+\tocsectotal=\dimen113
+\tocsubsecnum=\dimen114
+\tocsubsectotal=\dimen115
+\tocsubsubsecnum=\dimen116
+\tocsubsubsectotal=\dimen117
+\tocparanum=\dimen118
+\tocparatotal=\dimen119
+\tocsubparanum=\dimen120
+\@tempcntc=\count96
+\fnindent=\dimen121
+\c@@inst=\count97
+\c@@auth=\count98
+\c@auco=\count99
+\instindent=\dimen122
+\authrun=\box52
+\authorrunning=\toks14
+\tocauthor=\toks15
+\titrun=\box53
+\titlerunning=\toks16
+\toctitle=\toks17
+\c@theorem=\count100
+\c@case=\count101
+\c@conjecture=\count102
+\c@corollary=\count103
+\c@definition=\count104
+\c@example=\count105
+\c@exercise=\count106
+\c@lemma=\count107
+\c@note=\count108
+\c@problem=\count109
+\c@property=\count110
+\c@proposition=\count111
+\c@question=\count112
+\c@solution=\count113
+\c@remark=\count114
+\headlineindent=\dimen123
+)
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\epsfig.sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks18
+)
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\graphics.sty"
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.7\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 90.
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\dvips.def"
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen124
+\Gin@req@width=\dimen125
+)
+\epsfxsize=\dimen126
+\epsfysize=\dimen127
+)
+("C:\Program Files\MiKTeX 2.7\tex\latex\ltxmisc\endnotes.sty"
+\c@endnote=\count115
+\endnotesep=\dimen128
+\@enotes=\write3
+)
+("C:\Program Files\MiKTeX 2.7\tex\latex\ltxmisc\citesort.sty"
+\@minsofar=\count116
+\@min=\count117
+\@cite@temp=\count118
+)
+("C:\Program Files\MiKTeX 2.7\tex\latex\base\latexsym.sty"
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+("C:\Program Files\MiKTeX 2.7\tex\latex\psnfss\times.sty"
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+("C:\Program Files\MiKTeX 2.7\tex\latex\subfigure\subfigure.sty"
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip45
+\subfigcapskip=\skip46
+\subfigcaptopadj=\dimen129
+\subfigbottomskip=\skip47
+\subfigcapmargin=\dimen130
+\subfiglabelskip=\skip48
+\c@subfigure=\count119
+\c@lofdepth=\count120
+\c@subtable=\count121
+\c@lotdepth=\count122
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+("C:\Program Files\MiKTeX 2.7\tex\latex\subfigure\subfigure.cfg")
+\subfig@top=\skip49
+\subfig@bottom=\skip50
+)
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 130.
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\dvipsnam.def"
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+("C:\Program Files\MiKTeX 2.7\tex\generic\dvips\colordvi.sty")
+("C:\Program Files\MiKTeX 2.7\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2002/01/22 v2.2d
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2001/10/25 v2.2f
+\@emptytoks=\toks19
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+))
+(algorithm2e.sty
+Package: algorithm2e 2008/00/00 v3.10 algorithms environments
+\c@AlgoLine=\count123
+ ("C:\Program Files\MiKTeX 2.7\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files\MiKTeX 2.7\tex\latex\tools\xspace.sty"
+Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
+)
+("C:\Program Files\MiKTeX 2.7\tex\latex\ltxmisc\relsize.sty"
+Package: relsize 2003/07/04 ver 3.1
+)
+********************************************************
+Package `algorithm2e' Release 4.01 -- december 14 2009 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (fiorio@lirmm.fr)
+********************************************************
+\skiptotal=\skip51
+\skiplinenumber=\skip52
+\skiprule=\skip53
+\skiphlne=\skip54
+\skiptext=\skip55
+\skiplength=\skip56
+\algomargin=\skip57
+\skipalgocfslide=\skip58
+\algowidth=\dimen131
+\inoutsize=\dimen132
+\inoutline=\dimen133
+\interspacetitleruled=\dimen134
+\interspacealgoruled=\dimen135
+\interspacetitleboxruled=\dimen136
+\algocf@inoutbox=\box54
+\algocf@inputbox=\box55
+\AlCapSkip=\skip59
+\AlCapHSkip=\skip60
+\algocf@nlbox=\box56
+\algocf@hangingbox=\box57
+\algocf@capbox=\box58
+\algoheightruledefault=\skip61
+\algoheightrule=\skip62
+\algotitleheightruledefault=\skip63
+\algotitleheightrule=\skip64
+\c@algocfline=\count124
+\c@algocfproc=\count125
+\c@algocf=\count126
+\algocf@algoframe=\box59
+\algocf@algobox=\box60
+)
+\c@Theorem=\count127
+ (report-new.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 93.
+ ("C:\Program Files\MiKTeX 2.7\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 94.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 94.
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\base\ulasy.fd"
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 94.
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 94.
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 94.
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\psnfss\omsptm.fd"
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 94.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 96.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 116.
+
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\psnfss\ot1phv.fd"
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 116.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 119.
+
+
+LaTeX Warning: Citation `XXX' on page 1 undefined on input line 119.
+
+
+LaTeX Warning: Citation `das' on page 1 undefined on input line 119.
+
+
+LaTeX Warning: Citation `XXX' on page 1 undefined on input line 119.
+
+[1
+
+]
+
+LaTeX Warning: Citation `borodin' on page 2 undefined on input line 157.
+
+
+LaTeX Warning: Citation `patil-dht' on page 2 undefined on input line 198.
+
+
+LaTeX Warning: Citation ` patil-breeding' on page 2 undefined on input line 198
+.
+
+[2]
+
+LaTeX Warning: Citation `XXX' on page 3 undefined on input line 208.
+
+
+LaTeX Warning: Citation `shenkar' on page 3 undefined on input line 208.
+
+
+LaTeX Warning: Citation `patil-breeding' on page 3 undefined on input line 210.
+
+
+
+LaTeX Warning: Citation ` XXX' on page 3 undefined on input line 210.
+
+
+LaTeX Warning: Citation `XXX' on page 3 undefined on input line 210.
+
+
+LaTeX Warning: Citation `XXX' on page 3 undefined on input line 210.
+
+
+LaTeX Warning: Citation `fan' on page 3 undefined on input line 211.
+
+
+LaTeX Warning: Citation ` XXX' on page 3 undefined on input line 211.
+
+
+LaTeX Warning: Citation `baruch' on page 3 undefined on input line 215.
+
+
+LaTeX Warning: Citation `ortega' on page 3 undefined on input line 217.
+
+[3]
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no ” in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no ” in font ptmr7t!
+
+
+LaTeX Warning: Reference `' on page 4 undefined on input line 265.
+
+[4]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 333.
+
+[5]
+Overfull \hbox (0.86174pt too wide) in paragraph at lines 376--376
+[]\OT1/phv/b/n/12 The Topol-ogy Re-con-fig-u-ra-tion Prob-lem with Dy-namic Dat
+a
+ []
+
+
+LaTeX Warning: Reference `' on page 6 undefined on input line 378.
+
+[6]
+
+LaTeX Warning: Citation `borodin' on page 7 undefined on input line 405.
+
+
+Overfull \hbox (15.82451pt too wide) in paragraph at lines 431--433
+[][]\OT1/ptm/m/n/10 In our case the re-con-fig-u-ra-tion func-tion $\OML/cmm/m/
+it/10 d\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 \OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 de
+-pends upon the sum of auto-configuration
+ []
+
+
+LaTeX Warning: Citation `borodin' on page 7 undefined on input line 435.
+
+[7]
+
+LaTeX Warning: Citation `borodin' on page 8 undefined on input line 450.
+
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 453.
+
+("C:\Program Files\MiKTeX 2.7\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+! Undefined control sequence.
+l.458     \SetLine
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[8]
+
+! LaTeX Error: File `C:/Users/Tanu/Research/Articles/CN_Topology/5_node_configu
+ration_-_topology_transition' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.539 ...node_configuration_-_topology_transition}
+                                                  
+I could not locate the file with any of these extensions:
+.eps,.ps,.eps.gz,.ps.gz,.eps.Z
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `C:/Users/Tanu/Research/Articles/CN_Topology/10_node_config
+uration_-_topology_transitions' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.546 ...ode_configuration_-_topology_transitions}
+                                                  
+I could not locate the file with any of these extensions:
+.eps,.ps,.eps.gz,.ps.gz,.eps.Z
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `C:/Users/Tanu/Research/Articles/CN_Topology/20_node_config
+uration_-_topology_transitions.jpg' not found on input line 553.
+
+
+! LaTeX Error: File `C:/Users/Tanu/Research/Articles/CN_Topology/20_node_config
+uration_-_topology_transitions.jpg' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.553 ...configuration_-_topology_transitions.jpg}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Cannot determine size of graphic in C:/Users/Tanu/Research/Artic
+les/CN_Topology/20_node_configuration_-_topology_transitions.jpg (no BoundingBo
+x).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.553 ...configuration_-_topology_transitions.jpg}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: C:/Users/Tanu/Research/Articles/CN_Topology/20_node_configuration_-_topol
+ogy_transitions.jpg Graphic file (type eps)
+
+<C:/Users/Tanu/Research/Articles/CN_Topology/20_node_configuration_-_topology_t
+ransitions.jpg>
+
+LaTeX Warning: File `C:/Users/Tanu/Research/Articles/CN_Topology/performance_co
+mparison_for_k_1000(2).jpg' not found on input line 560.
+
+
+! LaTeX Error: File `C:/Users/Tanu/Research/Articles/CN_Topology/performance_co
+mparison_for_k_1000(2).jpg' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.560 ...performance_comparison_for_k_1000(2).jpg}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Cannot determine size of graphic in C:/Users/Tanu/Research/Artic
+les/CN_Topology/performance_comparison_for_k_1000(2).jpg (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.560 ...performance_comparison_for_k_1000(2).jpg}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: C:/Users/Tanu/Research/Articles/CN_Topology/performance_comparison_for_k_
+1000(2).jpg Graphic file (type eps)
+
+<C:/Users/Tanu/Research/Articles/CN_Topology/performance_comparison_for_k_1000(
+2).jpg>
+
+LaTeX Warning: File `C:/Users/Tanu/Research/Articles/CN_Topology/performance_co
+mparison_for_k_2000(2).jpg' not found on input line 567.
+
+
+! LaTeX Error: File `C:/Users/Tanu/Research/Articles/CN_Topology/performance_co
+mparison_for_k_2000(2).jpg' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.567 ...performance_comparison_for_k_2000(2).jpg}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Cannot determine size of graphic in C:/Users/Tanu/Research/Artic
+les/CN_Topology/performance_comparison_for_k_2000(2).jpg (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.567 ...performance_comparison_for_k_2000(2).jpg}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: C:/Users/Tanu/Research/Articles/CN_Topology/performance_comparison_for_k_
+2000(2).jpg Graphic file (type eps)
+
+<C:/Users/Tanu/Research/Articles/CN_Topology/performance_comparison_for_k_2000(
+2).jpg>
+
+LaTeX Warning: File `C:/Users/Tanu/Research/Articles/CN_Topology/performance_co
+mparison_for_k_4000(2).jpg' not found on input line 574.
+
+
+! LaTeX Error: File `C:/Users/Tanu/Research/Articles/CN_Topology/performance_co
+mparison_for_k_4000(2).jpg' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.574 ...performance_comparison_for_k_4000(2).jpg}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Cannot determine size of graphic in C:/Users/Tanu/Research/Artic
+les/CN_Topology/performance_comparison_for_k_4000(2).jpg (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.574 ...performance_comparison_for_k_4000(2).jpg}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: C:/Users/Tanu/Research/Articles/CN_Topology/performance_comparison_for_k_
+4000(2).jpg Graphic file (type eps)
+
+<C:/Users/Tanu/Research/Articles/CN_Topology/performance_comparison_for_k_4000(
+2).jpg>
+
+LaTeX Warning: File `C:/Users/Tanu/Research/Articles/CN_Topology/table1.jpg' no
+t found on input line 589.
+
+
+! LaTeX Error: File `C:/Users/Tanu/Research/Articles/CN_Topology/table1.jpg' no
+t found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.589 ...Research/Articles/CN_Topology/table1.jpg}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Cannot determine size of graphic in C:/Users/Tanu/Research/Artic
+les/CN_Topology/table1.jpg (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.589 ...Research/Articles/CN_Topology/table1.jpg}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: C:/Users/Tanu/Research/Articles/CN_Topology/table1.jpg Graphic file (type
+ eps)
+<C:/Users/Tanu/Research/Articles/CN_Topology/table1.jpg> [9] [10] [11] [12]
+[13] [14] (report-new.bbl
+
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
+
+) [15] (report-new.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3175 strings out of 95341
+ 39083 string characters out of 1184220
+ 110067 words of memory out of 1500000
+ 6302 multiletter control sequences out of 110000
+ 16530 words of font info for 56 fonts, out of 1200000 for 2000
+ 14 hyphenation exceptions out of 8191
+ 32i,12n,24p,1404b,398s stack positions out of 5000i,500n,10000p,200000b,5000s
+
+Output written on report-new.dvi (15 pages, 47128 bytes).

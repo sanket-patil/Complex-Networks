@@ -1,0 +1,567 @@
+%% ****** Start of file authguide.tex ****** %
+%%
+%%   This file is part of the APS files in the REVTeX 4 distribution.
+%%   Version 4.0 of REVTeX, August 2001
+%%
+%%   Copyright (c) 2000, 2001 The American Physical Society.
+%%
+%%   See the REVTeX 4 README file for restrictions and more information.
+%%
+\documentclass[%
+%prl%
+%,preprint%
+,twocolumn%
+,secnumarabic%
+%,tightenlines%
+,amssymb,aps,prl,nobibnotes]{revtex4}
+\usepackage{docs}
+%\usepackage{acrofont}%NOTE: Comment out this line for the release version!
+%\usepackage[colorlinks=true,linkcolor=blue]{hyperref}%
+%\nofiles
+\expandafter\ifx\csname package@font\endcsname\relax\else
+ \expandafter\expandafter
+ \expandafter\usepackage
+ \expandafter\expandafter
+ \expandafter{\csname package@font\endcsname}%
+\fi
+\DeclareRobustCommand\substyle{\name@idx{document substyle}}%
+\DeclareRobustCommand\classoption{\name@idx{document class option}}%
+\DeclareRobustCommand\classname{\name@idx{document class}}%
+\def\name@idx#1#2{%
+ {\ttfamily#2}%
+ \index{#2\space#1=\string\ttt{#2}\space#1}\index{#1>#2=\string\ttt{#2}}%
+}%
+
+\DeclareRobustCommand\revtex{REV\TeX}
+\begin{document}
+\title{Differences between \revtex~4 and \revtex~3}%
+\author{American Physical Society}%
+\email{revtex4@aps.org}
+\affiliation{1 Research Road, Ridge, NY 11961}
+\date{August 2001}%
+\maketitle
+\tableofcontents
+
+\section{Introduction}
+This document gives a brief summary of how \revtex~4 is different from
+what authors may already be familiar with.  The two primary design
+goals for \revtex~4 are to 1) move to \LaTeXe\ and 2) improve the
+markup so that infomation can be more reliably extracted for the
+editorial and production processes. Both of these goals require that
+authors comfortable with earlier versions of \revtex\ change their
+habits. In addition, authors may already be familiar with the standard
+\classname{article.cls} in \LaTeXe. \revtex~4 differs in some
+important ways from this class as well. For more complete
+documentation on \revtex~4, see the main \textit{\revtex~4 Author's
+Guide}.  The most important changes are in the markup of the front
+matter (title, authors, affiliations, abstract, etc.). Please see
+Sec.~\ref{sec:front}.
+
+\section{Version of \LaTeX}
+The most obvious difference between \revtex~4 and \revtex~3 is that
+\revtex~4 works solely with \LaTeXe; it is not useable as a \LaTeX2.09 package.
+Furthermore, \revtex~4 requires an up-to-date \LaTeX\ installation
+(1996/06/01 or later); its use under older versions is not supported.
+
+\section{Class Options and Defaults}
+Many of the class options in \revtex~3 have been retained in
+\revtex~4. However, the default behavior for these options can be
+different than in \revtex~3. Currently, there is only one society
+option, \classoption{aps}, and this is the default. Furthermore, the
+selection of a journal (such as \classoption{prl}) will automatically
+set the society as well (this will be true even after other societies
+are added).
+
+In \revtex~3, it was necessary to invoke the \classoption{floats}, but
+this is the default for \classoption{aps} journal in
+\revtex~4. \revtex~4 introduces two new class options,
+\classoption{endfloats} and \classoption{endfloats*} for moving floats
+to the end of the paper.
+
+The preamble commands \cmd{\draft} and \cmd{\tighten} have been replaced
+with new class options \classoption{draft} and
+\classoption{tightenlines}, respectively. The \cmd{\preprint} command
+is now used only for specifying institutional report numbers (typeset
+in the upper-righthand corner of the first page); it no longer
+influences whether PACS numbers are displayed below the abstract. PACS
+display is controlled by the \classoption{showpacs} and
+\classoption{noshowpacs} (default) class options.
+
+Paper size options (\classoption{letter}, \classoption{a4paper}, etc.)
+work in \revtex~4. The text ``Typeset by \revtex'' no longer appears
+by default - the option \classoption{byrevtex} will place this text in
+the lower-lefthand corner of the first page.
+
+\section{One- and Two-column formatting}
+
+\revtex~4 has excellent support for achieving the two-column
+formatting in the \textit{Physical~Review} and \textit{Reviews of
+Modern Physics} styles. It will balance the columns
+automatically. Whereas \revtex~3 had the \cmd{\widetext} and
+\cmd{\narrowtext} commands for switching between one- and two-cloumn
+modes, \revtex~4 simply has a \env{widetext} environment,
+\envb{widetext} \dots \enve{widetext}. One-column formatting can be
+specified by choosing either the \classoption{onecolumn} or
+\classoption{preprint} class option (the \revtex~3 option
+\classoption{manuscript} no longer exists). Two-column formatting is
+the default for most journal styles, but can be specified with the
+\classoption{twocolumn} option. Note that the spacing for
+\classoption{preprint} is now set to 1.5, rather than full
+double-spacing. The \classoption{tightenlines} option can be used to
+reduce this to single spacing.
+
+
+\section{Front Matter Markup}
+\label{sec:front}
+
+\revtex~4 has substantially changed how the front matter for an article
+is marked up. These are the most significant differences between
+\revtex~4 and other systems for typesetting manuscripts. It is
+essential that authors new to \revtex~4 be familiar with these changes.
+
+\subsection{Authors, Affiliations, and Author Notes}
+\revtex~4 has substantially changed the markup of author names,
+affiliations, and author notes (footnotes giving additional
+information about the author such as a permanent address or an email
+address).
+\begin{itemize}
+\item Each author name should appear separately in
+individual \cmd\author\ macros. 
+
+\item Email addresses should be marked up using the \cmd\email\ macro.
+
+\item Alternative affiliation information should be marked up using
+the \cmd\altaffiliation\ macro.
+
+\item URLs for author home pages can be specified with a
+\cmd\homepage\ macro.
+
+\item The \cmd\thanks\ macro should only be used if one of the above
+don't apply.
+
+\item \cmd{\email}, \cmd{\homepage}, \cmd{\altaffiliation}, and
+\cmd{\thanks} commands are grouped together under a single footnote for
+each author. These footnotes can either appear at the bottom of the
+first page of the article or as the first entries in the
+bibliography. The journal style controls this placement, but it may be
+overridden by using the class options \classoption{bibnotes} and
+\classoption{nobibnotes}. Note that these footnotes are treated
+differently than the other footnotes in the article.
+
+\item The grouping of authors by affiliations is accomplished
+automatically. Each affiliation should be in its own
+\cmd{\affiliation} command. Multiple \cmd{\affiliation},
+\cmd{\email}, \cmd{\homepage}, \cmd{\altaffiliation}, and \cmd{\thanks}
+commands can be applied to each author. The macro \cmd\and\ has been
+eliminated.
+
+\item \cmd\affiliation\ commmands apply to all previous authors that
+don't have an affiliation already declared. Furthermore, for any
+particular author, the \cmd\affilation\ must follow any \cmd{\email},
+\cmd{\homepage}, \cmd{\altaffiliation}, or \cmd{\thanks} commands for
+that author.
+
+\item Footnote-style associations of authors with affilitations should
+not be done via explicit superscripts; rather, the class option
+\classoption{superscriptaddress} should be used to accomplish this
+automatically.
+
+\item A collaboration for a group of authors can be given using the
+\cmd\collaboration\ command.
+
+\end{itemize}
+
+Table~\ref{tab:front} summarizes some common pitfalls in moving from
+\revtex~3 to \revtex~4.
+\begin{table*}
+\begin{ruledtabular}
+\begin{tabular}{lll}
+\textbf{\revtex~3 Markup} & \textbf{\revtex~4 Markup} & \textbf{Explanation}\\
+& & \\
+\verb+\author{Author One and Author Two}+ & \verb+\author{Author One}+ & One name per\\
+& \verb+\author{Author Two}+  & \verb+\author+ \\
+& & \\
+\verb+\author{Author One$^{1}$}+ & \verb+\author{Author One}+& Use \classoption{superscriptaddress}\\
+\dots &\dots &  class option \\
+\verb+\address{$^{1}$APS}+ &\verb+\affiliation{APS}+ & \\
+& & \\
+\verb+\thanks{Permanent address...}+ & \verb+\altaffiliation{}+& Use most
+specific macro \\
+\verb+\thanks{Electronic address: user@domain.edu}+ &
+\verb+\email{user@domain.edu}+& available\\
+\verb+\thanks{http://publish.aps.org/}+ &
+\verb+\homepage{http://publish.aps.org/}+& \\
+\end{tabular}
+\end{ruledtabular}
+\caption{Common mistakes in marking up the front matter}
+\label{tab:front}
+\end{table*}
+
+
+\subsection{Abstracts}
+\revtex~4, like \revtex~3, uses the \env{abstract} environment
+\envb{abstract} \dots \enve{abstract} for the abstract. The
+\env{abstract} environment must appear before the \cmd{\maketitle}
+command in \revtex~4. The abstract will be formatted
+appropriately for either one-column (preprint) or two-column
+formatting. In particular, in the two-column case, the abstract will
+automatically be placed in a single column that spans the width of the
+page. It is unnecessary to use a \cmd{\minipage} or any other macro to
+achieve this result.
+
+
+\section{Citations and References}
+
+\revtex~4 uses the same \cmd{\cite},\cmd{\ref}, and \cmd{\bibitem}
+commmands as standard \LaTeX\ and \revtex~3. Citation handling is
+based upon Patick Daly's \classname{natbib} package. The
+\env{references} environment is no longer used. Instead, use the
+standard \LaTeXe\ environment \env{thebibliography}.
+
+Two new \BibTeX\ files have been included with \revtex~4,
+\file{apsrev.bst} and \file{apsrmp.bst}. These will format references
+in the style of \textit{Physical Review} and \textit{Reviews of Modern
+Physics} respectively. In addition, these \BibTeX\ styles
+automatically apply a special macro \cmd{\bibinfo} to each element of the
+bibliography to make it easier to extract information for use in the
+editorial and production processes. Authors are strongly urged to use
+\BibTeX\ to manage their bibliographies so that the \cmd{\bibinfo}
+directives will be automatically included.  Other bibliography styles
+can be specified by using the \cmd\bibliographystyle\ command, but
+unlike standard \LaTeXe, you must give this command \emph{before} the
+\envb{document} statement.
+
+Please note that the package \classname{cite.sty} is not needed with
+\revtex~4 and is incompatible.
+
+\section{Footnotes and Tablenotes}
+\label{sec:foot}
+
+\revtex~4 uses the standard \cmd{\footnote} macro for
+footnotes. Footnotes can either appear on the bottom of the page on
+which they occur or they can appear as entries at the end of the
+bibliography. As with author notes, the journal style option controls
+the placement; however, this can be overridden with the class options
+\classoption{footinbib} and \classoption{nofootinbib}.
+
+Within a table, the \cmd{\footnote} command behaves differently. Footnotes
+appear at the bottom of the table. \cmd{\footnotemark} and
+\cmd{\footnotetext} are also available within the table environment so
+that multiple table entries can share the same footnote text.  There
+is no longer a need to use a \cmd{\tablenote}, \cmd{\tablenotemark},
+and \cmd{\tablenotetext} macros.
+
+\section{Section Commands}
+
+The title in a \cmd\section\marg{title} command will be automatically
+uppercased in \revtex~4. To prevent a particular letter from being
+uppercased, enclose it in curly braces.
+
+\section{Figures}
+
+Figures should be enclosed within either a \env{figure} or \env{figure*}
+environment (the latter will cause the figure to span the full width
+of the page in two-column mode). \LaTeXe\ has two convenient packages
+for including the figure file itself: \classname{graphics} and
+\classname{graphicx}. These two packages both define a macro
+\cmd{\includegraphics} which calls in the figure. They differ in how
+arguments for rotation, translation, and scaling are specified. The
+package \classname{epsfig} has been re-implemented to use these
+\classname{graphicx} package. The package \classname{epsfig} provides
+an interface similar to that under the \revtex~3 \classoption{epsf}
+class option. Authors should use these standard
+\LaTeXe\ packages rather than some other alternative.
+
+\section{Tables}
+
+Short tables should be enclosed within either a \env{table} or \env{table*}
+environmnent (the latter will cause the table to span the full width
+of the page in two-column mode). The heart of the table is the
+\env{tabular} environment. This will behave for the most part as in
+standard \LaTeXe. Note that \revtex~4 no longer automatically adds
+double (Scotch) rules around tables. Nor does the \env{tabular}
+environment set various table parameters as before. Instead, a new
+environment \env{ruledtabular} provides this functionality. This
+environment should surround the \env{tabular} environment:
+\begin{verbatim}
+\begin{table}
+\caption{...}
+\label{tab:...}
+\begin{ruledtabular}
+\begin{tabular}
+...
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+\end{verbatim}
+
+Under \revtex~3, tables automatically break across pages. \revtex~4
+provides some of this functionality. However, this requires adding the
+table a float placement option of [H] (meaning put the table
+``here'') to the \envb{table} command.
+
+Long tables are more robustly handled by using the
+\classname{longtable.sty} package included with the standard \LaTeXe\
+distribution (put \verb+\usepackage{longtable}+ in the preamble). This
+package gives precise control over the layout of the table. \revtex~4
+goes out of its way to provide patches so that the \env{longtable}
+environment will work within a two-column format. A new
+\env{longtable*} environment is also provided for long tables that are
+too wide for a narrow column. (Note that the \env{table*} and
+\env{longtable*} environments should always be used rather than
+attempting to use the \env{widetext} environment.)
+
+To create tables with columns of numbers aligned on decimal points,
+load the standard \LaTeXe\ \classname{dcolumn} package and use the
+\verb+d+ column specifier. The content of each cell in the column is
+implicitly in math mode: Use of math delimiters (\verb+$+) is unnecessary
+in a \verb+d+ column.
+
+Footnotes within a table can be specified with the
+\cmd{\footnote} command (see Sec.~\ref{sec:foot}). 
+
+\section{Font selection}
+
+The largest difference between \revtex~3 and \revtex~4 with respect to
+fonts is that \revtex~4 allows one use the \LaTeXe\ font commands such
+as \cmd{\textit}, \cmd{\texttt}, \cmd{\textbf} etc. These commands
+should be used in place of the basic \TeX/\LaTeX\ 2.09 font commands
+such as \cmd{\it}, \cmd{\tt}, \cmd{\bf}, etc. The new font commands
+better handle subtleties such as italic correction and scaling in
+super- and subscripts.
+
+\section{Math and Symbols}
+
+\revtex~4 depends more heavily on packages from the standard \LaTeXe\
+distribution and AMS-\LaTeX\ than \revtex~3 did. Thus, \revtex~4 users
+should make sure their \LaTeXe\ distributions are up to date and they
+should install AMS-\LaTeX\ 2.0 as well. In general, if any fine control of
+equation layout, special math symbols, or other specialized math
+constructs are needed, users should look to the \classname{amsmath}
+package (see the AMS-\LaTeX\ documentation).
+
+\revtex~4  provides a small number of additional diacritics, symbols,
+and bold parentheses. Table~\ref{tab:revsymb} summarizes this.
+
+\begin{table}
+\caption{Special \revtex~4 symbols, accents, and boldfaced parentheses 
+defined in \file{revsymb.sty}}
+\label{tab:revsymb}
+\begin{ruledtabular}
+\begin{tabular}{ll|ll}
+\cmd\lambdabar & $\lambdabar$ &\cmd\openone & $\openone$\\
+\cmd\altsuccsim & $\altsuccsim$ & \cmd\altprecsim & $\altprecsim$ \\
+\cmd\alt & $\alt$ & \cmd\agt & $\agt$ \\
+\cmd\tensor\ x & $\tensor x$ & \cmd\overstar\ x & $\overstar x$ \\
+\cmd\loarrow\ x & $\loarrow x$ & \cmd\roarrow\ x & $\roarrow x$  \\
+\cmd\biglb\ ( \cmd\bigrb ) & $\biglb( \bigrb)$ &
+\cmd\Biglb\ ( \cmd\Bigrb )& $\Biglb( \Bigrb)$ \\
+& & \\
+\cmd\bigglb\ ( \cmd\biggrb ) & $\bigglb( \biggrb)$ &
+\cmd\Bigglb\ ( \cmd\Biggrb\ ) & $\Bigglb( \Biggrb)$ \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+Here is a partial list of the more notable changes between \revtex~3
+and \revtex~4 math:
+\begin{itemize}
+\item Bold math characters should now be handle via the standard
+\LaTeXe\ \classname{bm} package (use \cmd{\bm} instead of \cmd{\bbox}).
+\cmd{\bm} will handle Greek letters and other symbols.
+
+\item Use the class options \classoption{amsmath},
+\classoption{amsfonts} and \classoption{amssymb} to get even more math
+fonts and symbols. \cmd{\mathfrak} and \cmd{\mathbb} will, for instance, give
+Fraktur and Blackboard Bold symbols.
+
+\item Use the \classoption{fleqn} class option for making equation
+flush left or right. \cmd{\FL} and \cmd{\FR} are no longer provided.
+
+\item In place of \cmd{\eqnum}, load the \classname{amsmath} package
+[\verb+\usepackage{amsmath}+] and use \cmd{\tag}.
+
+\item In place of \cmd{\case}, use \cmd{\textstyle}\cmd{\frac}.
+
+\item In place of the \env{mathletters} environment, load the
+\classname{amsmath} package and use \env{subequations} environment.
+
+\item In place of \cmd{\slantfrac}, use \cmd{\frac}.
+
+\item The macros \cmd{\corresponds}, \cmd{\overdots}, and
+\cmd{\overcirc} have been removed. See Table~\ref{tab:obsolete}.
+
+\end{itemize}
+
+\section{Obsolete \revtex~3.1 commands}
+
+Table~\ref{tab:obsolete} summarizes more differences between \revtex~4
+and \revtex~3, particularly which \revtex~3 commands are now obsolete.
+
+\begin{table*}
+\caption{Differences between \revtex~3.1 and \revtex~4
+markup}\label{tab:diff31}
+\label{tab:obsolete}
+\begin{ruledtabular}
+\begin{tabular}{lp{330pt}}
+\textbf{\revtex~3.1 command}&\textbf{\revtex~4 replacement}
+\lrstrut\\
+\cmd\documentstyle\oarg{options}\aarg{\classname{revtex}}&\cmd\documentclass\oarg{options}\aarg{\classname{revtex4}}
+\\
+option  \classoption{manuscript}& \classoption{preprint}
+\\
+\cmd\tighten\ preamble command & \classoption{tightenlines} class option
+\\
+\cmd\draft\ preamble command   & \classoption{draft} class option
+\\
+\cmd\author                    & \cmd\author\marg{name} may appear
+multiple times; each signifies a new author name.\\
+                               & \cmd\collaboration\marg{name}:
+Collaboration name (should appear after last \cmd\author)\\
+                               & \cmd\homepage\marg{URL}: URL for preceding author\\
+                               & \cmd\email\marg{email}: email
+address for preceding author\\
+                               & \cmd{\altaffiliation}: alternate
+affiliation for preceding \cmd\author\\
+\cmd\thanks                    & \cmd\thanks, but use only for
+information not covered by \cmd{\email}, \cmd{\homepage}, or \cmd{\altaffilitiation}\\
+\cmd\and                       & obsolete, remove this command\\
+\cmd\address                   & \cmd\affiliation\marg{institution}\ gives the affiliation for the group of authors above\\
+                               & \cmd\affiliation\oarg{note} lets you specify a footnote to this institution\\
+                               & \cmd\noaffiliation\ signifies that the above authors have no affiliation\\
+
+\cmd\preprint                  & \cmd\preprint\marg{number} can appear multiple times, and must precede \cmd\maketitle\\
+\cmd\pacs                      & \cmd\pacs\ must precede \cmd\maketitle\\
+\env{abstract} environment     & \env{abstract} environment must precede \cmd\maketitle\\
+\cmd\wideabs                       & obsolete, remove this command\\
+\cmd\maketitle                 & \cmd\maketitle\ must follow
+\emph{all} front matter data commands\\
+\cmd\narrowtext                & obsolete, remove this command\\
+\cmd\mediumtext                & obsolete, remove this command\\
+\cmd\widetext                  & obsolete, replace with \env{widetext} environment\\
+\cmd\FL                        & obsolete, remove this command\\
+\cmd\FR                        & obsolete, remove this command\\
+\cmd\eqnum                     & replace with \cmd\tag, load \classname{amsmath}\\
+\env{mathletters}              & replace with \env{subequations}, load
+\classname{amsmath}\\
+\env{tabular} environment      & No longer puts in doubled-rules. Enclose \env{tabular} in \env{ruledtabular} to get old behavior.\\
+\env{quasitable} environment   & obsolete, \env{tabular} environment no longer
+puts in rules\\
+\env{references} environment   & replace with \env{thebibliography}\verb+{}+\\
+\cmd\case                      & replace with \cmd\textstyle\cmd\frac\\
+\cmd\slantfrac                 & replace with \cmd\frac\\
+\cmd\tablenote                 & replace with \cmd\footnote\\
+\cmd\tablenotemark             & replace with \cmd\footnotemark\\
+\cmd\tablenotetext             & replace with \cmd\footnotetext\lrstrut\\
+\cmd\overcirc                  & Use standard \LaTeXe\ \cmd\mathring\ \\
+\cmd\overdots                  & Use \cmd\dddot\ with \classoption{amsmath}\\
+\cmd\corresponds               & Use \cmd\triangleq\ with \classoption{amssymb}\\
+\classoption{epsf} class option & \verb+\usepackage{epsfig}+\\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
+
+
+\section{Converting a \revtex~3.1 Document to \revtex~4}\label{sec:conv31}%
+
+\revtex~3 documents can be converted to \revtex~4 rather
+straightforwardly. The following checklist covers most of the major
+steps involved.
+
+\begin{itemize}
+\item Change \cmd\documentstyle\verb+{revtex}+ to
+\cmd\documentclass\verb+{revtex4}+, and run the document under
+\LaTeXe\ instead of \LaTeX2.09.
+
+\item
+Replace the \cmd\draft\ command with the \classoption{draft} class option.
+
+\item
+Replace the \cmd\tighten\ command with the \classoption{tightenlines}
+class option.
+
+\item
+For each \cmd\author\ command, split the multiple authors into
+individual \cmd\author\ commands. Remove any instances of \cmd\and.
+
+\item For superscript-style associations between authors and
+affiliations, remove explicit superscripts and use the
+\classoption{superscriptaddress} class option.
+
+\item
+Use \cmd\affiliation\ instead of \cmd\address.
+
+\item
+Put \cmd\maketitle\ after the \env{abstract} environment and any
+\cmd\pacs\ commands.
+
+\item If double-ruled table borders are desired, enclose \env{tabular}
+enviroments in \env{ruledtabular} environments.
+
+\item
+Convert long tables to \env{longtable}, and load the
+\classname{longtable} package. Alternatively, give the \env{table}
+an [H] float placement parameter so that the table will break automatically.
+
+\item
+Replace any instances of the \cmd\widetext\ and \cmd\narrowtext\
+commands with the \env{widetext} environment.
+Usually, the \envb{widetext} statement will replace the \cmd\widetext\
+command, and the \enve{widetext} statement replaces the matching
+\cmd\narrowtext\ command.
+
+Note in this connection that due to a curious feature of \LaTeX\
+itself, \revtex~4 having a \env{widetext} environment means that it
+also has a definition for the \cmd\widetext\ command, even though the
+latter cammand is not intended to be used in your document.
+Therefore, it is particularly important to remove
+all \cmd\widetext\ commands when converting to \revtex~4.
+
+\item
+Remove all obsolete commands: \cmd\FL, \cmd\FR, \cmd\narrowtext, and
+\cmd\mediumtext\ (see Table~\ref{tab:diff31}).
+
+\item
+Replace \cmd\case\ with \cmd\frac. If a fraction needs to be set
+in text style despite being in a display equation, use the
+construction \cmd\textstyle\cmd\frac.  Note that \cmd\frac\ does not
+support the syntax \cmd\case\verb+1/2+.
+
+\item
+Replace \cmd\slantfrac\ with \cmd\frac.
+
+\item
+Change \cmd\frak\ to \cmd\mathfrak\marg{char}\index{Fraktur} and
+\cmd\Bbb\ to \cmd\mathbb\marg{char}\index{Blackboard Bold}, and invoke
+one of the class options \classoption{amsfonts} or
+\classoption{amssymb}.
+
+\item
+Replace environment \env{mathletters} with environment
+\env{subequations} and load the \classname{amsmath} package.
+
+\item
+Replace \cmd\eqnum\ with \cmd\tag\ and load the \classname{amsmath} package.
+
+\item
+Replace \cmd\bbox\ with \cmd\bm\ and load the \classname{bm} package.
+
+\item
+If using the \cmd\text\ command, load the \classname{amsmath} package.
+
+\item
+If using the \verb+d+ column specifier in \env{tabular} environments,
+load the \classname{dcolumn} package. Under \classname{dcolumn}, the
+content of each \verb+d+ column cell is implicitly in math mode:
+remove any \verb+$+ math delimiters appearing in cells in a \verb+d+
+column.
+
+\item
+Replace \cmd\tablenote\ with \cmd\footnote, \cmd\tablenotemark\ with
+\cmd\footnotemark, and \cmd\tablenotetext\ with \cmd\footnotetext.
+
+\item
+Replace \envb{references} with \envb{thebibliography}\verb+{}+;
+\enve{references} with \enve{thebibliography}.
+\end{itemize}
+\end{document}

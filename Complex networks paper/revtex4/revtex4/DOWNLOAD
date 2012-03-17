@@ -1,0 +1,75 @@
+Last updated August 3, 2001
+
+To download REVTeX 4, download the files listed below, or, more, conveniently,
+download revtex4.tar.gz or revtex4.zip which contains all of the files.
+
+Only the files under 'Essential files' are required to run REVTeX 4, but
+be sure to read the documentation under the 'docs' subdirectory and look
+over the sample files in the 'samples' subdirectory.
+
+                     Essential files
+                     ---------------    
+revtex4.cls  - The REVTeX 4 class file
+aps.rtx      - APS specific REVTeX 4 customizations for Phys. Rev.
+rmp.rtx      - APS specific REVTeX 4 customizations for Rev. Mod. Phys.
+10pt.rtx     - 10 point size class option file for REVTeX.
+11pt.rtx     - 11 point size class option file for REVTeX.
+12pt.rtx     - 12 point size class option file for REVTeX.
+apsrev.bst   - A new custom-bib based BibTeX style file for use with
+               REVTeX 4 for Phys. Rev. style citations.
+apsrmp.bst   - For Rev. Mod. Physics (author/year) style citations 
+revsymb.sty  - A collection of common symbols for use outside of REVTeX.
+
+                     Documentation files
+                     -------------------
+(located in /docs subdirectory)
+auguide.tex  - Author's guide to REVTeX 4 (Note: There is a
+               separate "APS Compuscript Guide for REVTeX 4" detailing
+               restrictions for APS submissions)
+differ.tex   - "Differences between REVTeX 3 and REVTeX 4"
+summary.tex  - "REVTeX 4 Command and Options Summary"
+revbib.tex   - A short introduction to using BibTeX with REVTeX 4 (Not
+               available yet)
+docs.sty     - Used by auguide.tex and differ.tex
+
+                     Sample files
+                     ------------
+(located in /sample subdirectory)
+template.aps - A template for APS authors to follow
+apssamp.tex  - A sample file showing how to achieve certain effects
+               using REVTeX 4
+fig_1.eps    - sample figure for apssamp.tex
+fig_2.eps    - sample wide figure for apssamp.tex
+apssamp.bib  - sample BibTeX source file for apssamp.tex
+
+                     Source files
+                     ------------
+(located in /src subdirectory)
+revtex4.dtx  - The commented source file for revtex4.cls and revsymb.sty.
+revtex4.pdf  - PDF documentation generated from .dtx file
+ltxgrid.dtx  - The commented source file for the ltxgrid package
+ltxgrid.pdf  - PDF documentation generated from .dtx file
+ltxutil.dtx  - The commented source file for the ltxutil package
+ltxutil.pdf  - PDF documentation generated from .dtx file
+ltxdocext.dtx - The commented source file for the ltxdocext package
+ltxdocext.pdf - PDF documentation generated from .dtx file
+textcase.dtx - The commented source file for the textcase package
+revtex4.ins  - A docstrip (version 2.4 or higher) file for extracting
+               revtex4.cls and revsymb.sty from the *.dtx files
+
+Not Included   
+------------
+The following packages are required by REVTeX but are not
+included in this distribution. Please obtain from CTAN
+(Comprehensive TeX Archive Network), e.g. <http://www.ctan.org/>. These
+can also be downloaded from <http://publish.aps.org/revtex4/>.
+
+natbib.dtx   - Version 7 or later needed
+natbib.ins   - LaTeX this to create natbib.sty and natbib
+               documentation from natbib.dtx
+bm.dtx       - Bold math style - part of (current!) standard LaTeX2e tools
+bm.sty       - generated from bm.dtx by running tools.ins
+
+An up-to-date installation of AMS-LaTeX is also required for certain
+documentclass options. Version 2.0 or higher is needed. It is
+available from <http://www.ams.org/tex/>.

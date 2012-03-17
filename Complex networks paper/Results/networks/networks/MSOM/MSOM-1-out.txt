@@ -1,0 +1,129 @@
+No of Nodes: 8
+
+No of Edges: 10
+
+Connectance/Density: 0.17857142857142858
+
+Cost: 0.07142857142857142
+
+Strongly connected: no
+
+No. of Paths: 19
+
+Connectivity: 0.3392857142857143
+
+Diameter: undefined
+
+Efficiency (upper bound): undefined
+
+APL: 1.4736842105263157
+
+Efficiency (abs. avg., SECON): 0.6785714285714286
+
+Efficiecy (normalized wrt star, SECON): 1.017857142857143
+
+---------------------------------
+
+Degree Distribution
+
+InDegree of Manuf_0001: 3
+InDegree of Retail_0001: 1
+InDegree of Retail_0002: 2
+InDegree of Manuf_0002: 3
+InDegree of Retail_0003: 1
+InDegree of Part_0001: 0
+InDegree of Part_0002: 0
+InDegree of Part_0003: 0
+
+OutDegree of Manuf_0001: 2
+OutDegree of Retail_0001: 0
+OutDegree of Retail_0002: 0
+OutDegree of Manuf_0002: 2
+OutDegree of Retail_0003: 0
+OutDegree of Part_0001: 2
+OutDegree of Part_0002: 2
+OutDegree of Part_0003: 2
+
+InDegree Distribution (normalized)
+
+InDD: [ 0.3 0.1 0.2 0.3 0.1 0.0 0.0 0.0 ]
+
+OutDegree Distribution (normalized)
+
+OutDD: [ 0.2 0.0 0.0 0.2 0.0 0.2 0.2 0.2 ]
+
+Regularity Index (for indegree): 0.6666666666666667
+
+Regularity Index (for outdegree): 0.8571428571428572
+
+Mean indegree: 1.25
+
+Highest indegree: 3
+
+Mean outdegree: 1.25
+
+Highest outdegree: 2
+
+
+---------------------------------
+
+Node Eccentricity Values
+
+Ecc: [1 und und 1 und 2 2 2 ]
+
+Highest Eccentricity (diameter): 2
+
+Least Eccentricity (radius): 1
+
+Average Eccentricity: 1.6
+
+
+Most Eccentric Nodes (peripheral nodes): 
+
+Part_0001 Part_0002 Part_0003 
+
+Least Eccentric Nodes (central nodes): 
+
+Manuf_0001 Manuf_0002 
+
+
+---------------------------------
+
+Centrality Measures
+
+Node Centrality (Betweenness) Distribution: 
+
+Node Centrality: [ 0.6666666666666666 0.0 0.0 0.3333333333333333 0.0 0.0 0.0 0.0 ]
+
+Highest Node Centrality: 0.6666666666666666
+
+Mean Node Centrality: 0.125
+
+Most Central Nodes (highly loaded nodes): 
+
+Manuf_0001 
+
+Least Central Nodes (less loaded nodes): 
+
+Retail_0001 Retail_0002 Retail_0003 Part_0001 Part_0002 Part_0003 
+
+
+Edge Centrality Distribution: 
+
+Edge Centrality: [ 0.21052631578947367 0.21052631578947367 0.05263157894736842 0.21052631578947367 0.15789473684210525 0.10526315789473684 0.15789473684210525 0.10526315789473684 0.15789473684210525 0.10526315789473684 ]
+
+Highest Edge Centrality: 0.21052631578947367
+
+Mean Edge Centrality: 0.14736842105263154
+
+Most Central Edges (highly loaded edges): 
+
+Manuf_0001--Retail_0001 Manuf_0001--Retail_0002 Manuf_0002--Retail_0003 
+
+Least Central Edges (less loaded edges): 
+
+Manuf_0002--Retail_0002 
+
+
+----------------------
+

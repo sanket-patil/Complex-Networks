@@ -1,0 +1,126 @@
+function[] = computegraphproperties_foodweb(Elist)
+
+com_weight_mat = ones(max(max(Elist(:,1)),max(Elist(:,2))));
+
+com_sparse_mat = sparse(com_weight_mat);
+
+adj_mat = AList_Amat_converter(Elist); 
+
+weight_mat = AList_Amat_converter_weighted(Elist);
+ 
+
+sparse_mat = sparse(weight_mat); 
+ 
+
+temp_sparse = sparse(adj_mat); 
+
+noOfnodes = num_vertices(temp_sparse); 
+
+noOfedges = num_edges(temp_sparse); 
+
+apwsp = graphallshortestpaths(sparse_mat,'Directed', false); 
+
+%apwsp = all_shortest_paths(sparse_mat,struct('algname','floyd_warshall'));
+
+com_apwsp = all_shortest_paths(com_sparse_mat,struct('algname','floyd_warshall'));
+
+fprintf('The number of nodes is: %d \n',noOfnodes);
+
+fprintf('The number of edges is: %d \n',noOfedges);
+
+connectance = noOfedges/(noOfnodes*(noOfnodes - 1));
+
+fprintf('The Connectance is: %3.3f \n',connectance); 
+
+apl = 0; 
+
+for i = 1 : length(apwsp)
+    for j = 1 : length(apwsp) 
+        
+        %fprintf('The apwsp is: %d,  %d,  %d \n',apwsp(i,j),i,j);
+        
+        apl = apl + (1/apwsp(i,j));  
+       
+    end 
+end
+
+com_apl =0;
+
+for i = 1 : length(com_apwsp)
+    for j = 1 : length(com_apwsp) 
+        
+        %fprintf('The com_apwsp is: %d,  %d,  %d \n',com_apwsp(i,j),i,j);
+        
+        com_apl = com_apl + (1/com_apwsp(i,j));  
+       
+    end 
+end
+
+bc = betweenness_centrality(sparse_mat); 
+
+norm_bc = bc/((noOfnodes-1)*(noOfnodes - 2)); 
+
+
+% fprintf('The betweenness centrality is: %3.3f \n',bc);
+
+% fprintf('The normalized betweenness centrality is: %3.3f \n',norm_bc);
+
+%apl = sum(sum(apwsp))/(noOfnodes*(noOfnodes - 1)); 
+
+apl_norm = apl/(noOfnodes*(noOfnodes - 1)); 
+
+com_apl_norm = com_apl/(noOfnodes*(noOfnodes - 1)); 
+
+fprintf('The average path length is: %3.3f \n', apl); 
+
+%eff_secon = 1/apl; 
+
+eff_secon = apl_norm; 
+
+fprintf('The efficiency (as given in SECON paper) is: %1.3f \n',eff_secon); 
+
+eff_norm = (2 * (noOfnodes - 1)/noOfnodes)/apl;
+
+com_eff_norm = com_apl/apl;
+
+fprintf('The efficiency normlized wrt star is: %1.3f \n',eff_norm); 
+
+fprintf('The efficiency normlized wrt complete graph is: %1.3f \n',com_eff_norm);
+
+
+highest_bc = max(norm_bc); 
+
+mean_bc = mean(norm_bc); 
+
+
+
+fprintf('The highest node centrality is: %3.3f \n',highest_bc);
+
+fprintf('The mean node centrality is: %3.3f \n',mean_bc);
+
+maxSkew = 1 - 1/noOfnodes;
+skew = highest_bc - mean_bc;
+
+robustness = (maxSkew - skew)/maxSkew;
+
+fprintf('The value of Robustness is: %3.3f \n', robustness); 
+
+
+beta = robustness/(com_eff_norm + robustness); 
+
+fprintf('The efficiency normlized wrt complete graph (with equal weights) is: %1.3f \n',com_eff_norm);
+
+fprintf('The value of beta is: %3.3f \n',beta); 
+
+
+
+
+
+
+
+
+
+
+
+
+

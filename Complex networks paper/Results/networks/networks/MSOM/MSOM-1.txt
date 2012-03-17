@@ -1,0 +1,10 @@
+Manuf_0001	Retail_0001
+Manuf_0001	Retail_0002
+Manuf_0002	Retail_0002
+Manuf_0002	Retail_0003
+Part_0001	Manuf_0001
+Part_0001	Manuf_0002
+Part_0002	Manuf_0001
+Part_0002	Manuf_0002
+Part_0003	Manuf_0001
+Part_0003	Manuf_0002

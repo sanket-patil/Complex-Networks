@@ -1,0 +1,55 @@
+Average Fitness: 0.29105
+Max fitness: 0.5
+fittest: ['1 6', '6 5', '6 3', '2 4', '1 4']
+Min fitness: 0.166666666667
+
+Average Fitness: 0.261637997039
+Max fitness: 0.5
+fittest: ['2 1', '1 6', '5 2', '4 2', '3 6']
+Min fitness: 0.166666666667
+
+Average Fitness: 0.286112669829
+Max fitness: 0.5
+fittest: ['5 6', '6 1', '3 4', '4 2', '3 6']
+Min fitness: 0.166666666667
+
+Average Fitness: 0.287674955836
+Max fitness: 0.5
+fittest: ['1 6', '2 4', '3 4', '4 6', '6 5']
+Min fitness: 0.166666666667
+
+Average Fitness: 0.289534725065
+Max fitness: 0.5
+fittest: ['2 5', '5 6', '2 1', '1 3', '2 4']
+Min fitness: 0.166666666667
+
+Average Fitness: 0.29948927477
+Max fitness: 0.5
+fittest: ['3 6', '1 3', '2 6', '2 4', '3 5']
+Min fitness: 0.166666666667
+
+Average Fitness: 0.298033845582
+Max fitness: 0.5
+fittest: ['1 6', '2 6', '3 6', '1 4', '5 1']
+Min fitness: 0.166666666667
+
+Average Fitness: 0.298137859558
+Max fitness: 0.5
+fittest: ['2 1', '1 3', '4 1', '5 1', '6 2']
+Min fitness: 0.166666666667
+
+Average Fitness: 0.312658919094
+Max fitness: 0.5
+fittest: ['2 1', '1 3', '1 4', '6 1', '2 5']
+Min fitness: 0.166666666667
+
+Average Fitness: 0.306030099654
+Max fitness: 0.5
+fittest: ['5 1', '1 4', '5 2', '3 5', '4 6']
+Min fitness: 0.166666666667
+
+Average Fitness: 0.303325844227
+Max fitness: 0.5
+fittest: ['6 1', '1 4', '2 1', '1 3', '2 5']
+Min fitness: 0.166666666667
+

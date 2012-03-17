@@ -1,0 +1,576 @@
+% ****** Start of file apssamp.tex ******
+%
+%   This file is part of the APS files in the REVTeX 4 distribution.
+%   Version 4.0 of REVTeX, August 2001
+%
+%   Copyright (c) 2001 The American Physical Society.
+%
+%   See the REVTeX 4 README file for restrictions and more information.
+%
+% TeX'ing this file requires that you have AMS-LaTeX 2.0 installed
+% as well as the rest of the prerequisites for REVTeX 4.0
+%
+% See the REVTeX 4 README file
+% It also requires running BibTeX. The commands are as follows:
+%
+%  1)  latex apssamp.tex
+%  2)  bibtex apssamp
+%  3)  latex apssamp.tex
+%  4)  latex apssamp.tex
+%
+\documentclass[twocolumn,showpacs,preprintnumbers,amsmath,amssymb]{revtex4}
+%\documentclass[preprint,showpacs,preprintnumbers,amsmath,amssymb]{revtex4}
+
+% Some other (several out of many) possibilities
+%\documentclass[preprint,aps]{revtex4}
+%\documentclass[preprint,aps,draft]{revtex4}
+%\documentclass[prb]{revtex4}% Physical Review B
+
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+
+%\nofiles
+
+\begin{document}
+
+\preprint{APS/123-QED}
+
+\title{Manuscript Title:\\with Forced Linebreak}% Force line breaks with \\
+
+\author{Ann  Author}
+ \altaffiliation[Also at ]{Physics Department, XYZ University.}%Lines break automatically or can be forced with \\
+\author{Second Author}%
+ \email{Second.Author@institution.edu}
+\affiliation{%
+Authors' institution and/or address\\
+This line break forced with \textbackslash\textbackslash
+}%
+
+\author{Charlie Author}
+ \homepage{http://www.Second.institution.edu/~Charlie.Author}
+\affiliation{
+Second institution and/or address\\
+This line break forced% with \\
+}%
+
+\date{\today}% It is always \today, today,
+             %  but any date may be explicitly specified
+
+\begin{abstract}
+An article usually includes an abstract, a concise summary of the work
+covered at length in the main body of the article. It is used for
+secondary publications and for information retrieval purposes. Valid
+PACS numbers may be entered using the \verb+\pacs{#1}+ command.
+\end{abstract}
+
+\pacs{Valid PACS appear here}% PACS, the Physics and Astronomy
+                             % Classification Scheme.
+%\keywords{Suggested keywords}%Use showkeys class option if keyword
+                              %display desired
+\maketitle
+
+\section{\label{sec:level1}First-level heading:\protect\\ The line
+break was forced \lowercase{via} \textbackslash\textbackslash}
+
+This sample document demonstrates proper use of REV\TeX~4 (and
+\LaTeXe) in mansucripts prepared for submission to APS
+journals. Further information can be found in the REV\TeX~4
+documentation included in the distribution or available at
+\url{http://publish.aps.org/revtex4/}.
+
+When commands are referred to in this example file, they are always
+shown with their required arguments, using normal \TeX{} format. In
+this format, \verb+#1+, \verb+#2+, etc. stand for required
+author-supplied arguments to commands. For example, in
+\verb+\section{#1}+ the \verb+#1+ stands for the title text of the
+author's section heading, and in \verb+\title{#1}+ the \verb+#1+
+stands for the title text of the paper.
+
+Line breaks in section headings at all levels can be introduced using
+\textbackslash\textbackslash. A blank input line tells \TeX\ that the
+paragraph has ended. Note that top-level section headings are
+automatically uppercased. If a specific letter or word should appear in
+lowercase instead, you must escape it using \verb+\lowercase{#1}+ as
+in the word ``via'' above.
+
+\subsection{\label{sec:level2}Second-level heading: Formatting}
+
+This file may be formatted in both the \texttt{preprint} and
+\texttt{twocolumn} styles. \texttt{twocolumn} format may be used to
+mimic final journal output. Either format may be used for submission
+purposes; however, for peer review and production, APS will format the
+article using the \texttt{preprint} class option. Hence, it is
+essential that authors check that their manuscripts format acceptably
+under \texttt{preprint}. Manuscripts submitted to APS that do not
+format correctly under the \texttt{preprint} option may be delayed in
+both the editorial and production processes.
+
+The \texttt{widetext} environment will make the text the width of the
+full page, as on page~\pageref{eq:wideeq}. (Note the use the
+\verb+\pageref{#1}+ to get the page number right automatically.) The
+width-changing commands only take effect in \texttt{twocolumn}
+formatting. It has no effect if \texttt{preprint} formatting is chosen
+instead.
+
+\subsubsection{\label{sec:level3}Third-level heading: References and Footnotes}
+Reference citations in text use the commands \verb+\cite{#1}+ or
+\verb+\onlinecite{#1}+. \verb+#1+ may contain letters and numbers.
+The reference itself is specified by a \verb+\bibitem{#1}+ command
+with the same argument as the \verb+\cite{#1}+ command.
+\verb+\bibitem{#1}+ commands may be crafted by hand or, preferably,
+generated by using Bib\TeX. REV\TeX~4 includes Bib\TeX\ style files
+\verb+apsrev.bst+ and \verb+apsrmp.bst+ appropriate for
+\textit{Physical Review} and \textit{Reviews of Modern Physics},
+respectively. REV\TeX~4 will automatically choose the style
+appropriate for the journal specified in the document class
+options. This sample file demonstrates the basic use of Bib\TeX\
+through the use of \verb+\bibliography+ command which references the
+\verb+assamp.bib+ file. Running Bib\TeX\ (typically \texttt{bibtex
+apssamp}) after the first pass of \LaTeX\ produces the file
+\verb+apssamp.bbl+ which contains the automatically formatted
+\verb+\bibitem+ commands (including extra markup information via
+\verb+\bibinfo+ commands). If not using Bib\TeX, the
+\verb+thebibiliography+ environment should be used instead.
+
+To cite bibliography entries, use the \verb+\cite{#1}+ command. Most
+journal styles will display the corresponding number(s) in square
+brackets: \cite{feyn54,witten2001}. To avoid the square brackets, use
+\verb+\onlinecite{#1}+: Refs.~\onlinecite{feyn54} and
+\onlinecite{witten2001}. REV\TeX\ ``collapses'' lists of
+consecutive reference numbers where possible. We now cite everyone
+together \cite{feyn54,witten2001,epr}, and once again
+(Refs.~\onlinecite{epr,feyn54,witten2001}). Note that the references
+were also sorted into the correct numerical order as well.
+
+When the \verb+prb+ class option is used, the \verb+\cite{#1}+ command
+displays the reference's number as a superscript rather than using
+square brackets. Note that the location of the \verb+\cite{#1}+
+command should be adjusted for the reference style: the superscript
+references in \verb+prb+ style must appear after punctuation;
+otherwise the reference must appear before any punctuation. This
+sample was written for the regular (non-\texttt{prb}) citation style.
+The command \verb+\onlinecite{#1}+ in the \texttt{prb} style also
+displays the reference on the baseline.
+
+Footnotes are produced using the \verb+\footnote{#1}+ command. Most
+APS journal styles put footnotes into the bibliography. REV\TeX~4 does
+this as well, but instead of interleaving the footnotes with the
+references, they are listed at the end of the references\footnote{This
+may be improved in future versions of REV\TeX.}. Because the correct
+numbering of the footnotes must occur after the numbering of the
+references, an extra pass of \LaTeX\ is required in order to get the
+numbering correct.
+
+\section{Math and Equations}
+Inline math may be typeset using the \verb+$+ delimiters. Bold math
+symbols may be achieved using the \verb+bm+ package and the
+\verb+\bm{#1}+ command it supplies. For instance, a bold $\alpha$ can
+be typeset as \verb+$\bm{\alpha}$+ giving $\bm{\alpha}$. Fraktur and
+Blackboard (or open face or double struck) characters should be
+typeset using the \verb+\mathfrak{#1}+ and \verb+\mathbb{#1}+ commands
+respectively. Both are supplied by the \texttt{amssymb} package. For
+example, \verb+$\mathbb{R}$+ gives $\mathbb{R}$ and
+\verb+$\mathfrak{G}$+ gives $\mathfrak{G}$
+
+In \LaTeX\ there are many different ways to display equations, and a
+few preferred ways are noted below. Displayed math will center by
+default. Use the class option \verb+fleqn+ to flush equations left.
+
+Below we have numbered single-line equations; this is the most common
+type of equation in \textit{Physical Review}:
+\begin{eqnarray}
+\chi_+(p)\alt{\bf [}2|{\bf p}|(|{\bf p}|+p_z){\bf ]}^{-1/2}
+\left(
+\begin{array}{c}
+|{\bf p}|+p_z\\
+px+ip_y
+\end{array}\right)\;,
+\\
+\left\{%
+ \openone234567890abc123\alpha\beta\gamma\delta1234556\alpha\beta
+ \frac{1\sum^{a}_{b}}{A^2}%
+\right\}%
+\label{eq:one}.
+\end{eqnarray}
+Note the open one in Eq.~(\ref{eq:one}).
+
+Not all numbered equations will fit within a narrow column this
+way. The equation number will move down automatically if it cannot fit
+on the same line with a one-line equation:
+\begin{equation}
+\left\{
+ ab12345678abc123456abcdef\alpha\beta\gamma\delta1234556\alpha\beta
+ \frac{1\sum^{a}_{b}}{A^2}%
+\right\}.
+\end{equation}
+
+When the \verb+\label{#1}+ command is used [cf. input for
+Eq.~(\ref{eq:one})], the equation can be referred to in text without
+knowing the equation number that \TeX\ will assign to it. Just
+use \verb+\ref{#1}+, where \verb+#1+ is the same name that used in
+the \verb+\label{#1}+ command.
+
+Unnumbered single-line equations can be typeset
+using the \verb+\[+, \verb+\]+ format:
+\[g^+g^+ \rightarrow g^+g^+g^+g^+ \dots ~,~~q^+q^+\rightarrow
+q^+g^+g^+ \dots ~. \]
+
+\subsection{Multiline equations}
+
+Multiline equations are obtained by using the \verb+eqnarray+
+environment.  Use the \verb+\nonumber+ command at the end of each line
+to avoid assigning a number:
+\begin{eqnarray}
+{\cal M}=&&ig_Z^2(4E_1E_2)^{1/2}(l_i^2)^{-1}
+\delta_{\sigma_1,-\sigma_2}
+(g_{\sigma_2}^e)^2\chi_{-\sigma_2}(p_2)\nonumber\\
+&&\times
+[\epsilon_jl_i\epsilon_i]_{\sigma_1}\chi_{\sigma_1}(p_1),
+\end{eqnarray}
+\begin{eqnarray}
+\sum \vert M^{\text{viol}}_g \vert ^2&=&g^{2n-4}_S(Q^2)~N^{n-2}
+        (N^2-1)\nonumber \\
+ & &\times \left( \sum_{i<j}\right)
+  \sum_{\text{perm}}
+ \frac{1}{S_{12}}
+ \frac{1}{S_{12}}
+ \sum_\tau c^f_\tau~.
+\end{eqnarray}
+\textbf{Note:} Do not use \verb+\label{#1}+ on a line of a multiline
+equation if \verb+\nonumber+ is also used on that line. Incorrect
+cross-referencing will result. Notice the use \verb+\text{#1}+ for
+using a Roman font within a math environment.
+
+To set a multiline equation without \emph{any} equation
+numbers, use the \verb+\begin{eqnarray*}+,
+\verb+\end{eqnarray*}+ format:
+\begin{eqnarray*}
+\sum \vert M^{\text{viol}}_g \vert ^2&=&g^{2n-4}_S(Q^2)~N^{n-2}
+        (N^2-1)\\
+ & &\times \left( \sum_{i<j}\right)
+ \left(
+  \sum_{\text{perm}}\frac{1}{S_{12}S_{23}S_{n1}}
+ \right)
+ \frac{1}{S_{12}}~.
+\end{eqnarray*}
+To obtain numbers not normally produced by the automatic numbering,
+use the \verb+\tag{#1}+ command, where \verb+#1+ is the desired
+equation number. For example, to get an equation number of
+(\ref{eq:mynum}),
+\begin{equation}
+g^+g^+ \rightarrow g^+g^+g^+g^+ \dots ~,~~q^+q^+\rightarrow
+q^+g^+g^+ \dots ~. \tag{2.6$'$}\label{eq:mynum}
+\end{equation}
+
+A few notes on \verb=\tag{#1}=. \verb+\tag{#1}+ requires
+\texttt{amsmath}. The \verb+\tag{#1}+ must come before the
+\verb+\label{#1}+, if any. The numbering set with \verb+\tag{#1}+ is
+\textit{transparent} to the automatic numbering in REV\TeX{};
+therefore, the number must be known ahead of time, and it must be
+manually adjusted if other equations are added. \verb+\tag{#1}+ works
+with both single-line and multiline equations. \verb+\tag{#1}+ should
+only be used in exceptional case - do not use it to number all
+equations in a paper.
+
+Enclosing single-line and multiline equations in
+\verb+\begin{subequations}+ and \verb+\end{subequations}+ will produce
+a set of equations that are ``numbered'' with letters, as shown in
+Eqs.~(\ref{subeq:1}) and (\ref{subeq:2}) below:
+\begin{subequations}
+\label{eq:whole}
+\begin{equation}
+\left\{
+ abc123456abcdef\alpha\beta\gamma\delta1234556\alpha\beta
+ \frac{1\sum^{a}_{b}}{A^2}
+\right\},\label{subeq:1}
+\end{equation}
+\begin{eqnarray}
+{\cal M}=&&ig_Z^2(4E_1E_2)^{1/2}(l_i^2)^{-1}
+(g_{\sigma_2}^e)^2\chi_{-\sigma_2}(p_2)\nonumber\\
+&&\times
+[\epsilon_i]_{\sigma_1}\chi_{\sigma_1}(p_1).\label{subeq:2}
+\end{eqnarray}
+\end{subequations}
+Putting a \verb+\label{#1}+ command right after the
+\verb+\begin{subequations}+, allows one to
+reference all the equations in a subequations environment. For
+example, the equations in the preceding subequations environment were
+Eqs.~(\ref{eq:whole}).
+
+\subsubsection{Wide equations}
+The equation that follows is set in a wide format, i.e., it spans
+across the full page. The wide format is reserved for long equations
+that cannot be easily broken into four lines or less:
+\begin{widetext}
+\begin{equation}
+{\cal R}^{(\text{d})}=
+ g_{\sigma_2}^e
+ \left(
+   \frac{[\Gamma^Z(3,21)]_{\sigma_1}}{Q_{12}^2-M_W^2}
+  +\frac{[\Gamma^Z(13,2)]_{\sigma_1}}{Q_{13}^2-M_W^2}
+ \right)
+ + x_WQ_e
+ \left(
+   \frac{[\Gamma^\gamma(3,21)]_{\sigma_1}}{Q_{12}^2-M_W^2}
+  +\frac{[\Gamma^\gamma(13,2)]_{\sigma_1}}{Q_{13}^2-M_W^2}
+ \right)\;. \label{eq:wideeq}
+\end{equation}
+\end{widetext}
+This is typed to show the output is in wide format.
+(Since there is no input line between \verb+\equation+ and
+this paragraph, there is no paragraph indent for this paragraph.)
+\section{Cross-referencing}
+REV\TeX{} will automatically number sections, equations, figure
+captions, and tables. In order to reference them in text, use the
+\verb+\label{#1}+ and \verb+\ref{#1}+ commands. To reference a
+particular page, use the \verb+\pageref{#1}+ command.
+
+The \verb+\label{#1}+ should appear in a section heading, within an
+equation, or in a table or figure caption. The \verb+\ref{#1}+ command
+is used in the text where the citation is to be displayed.  Some
+examples: Section~\ref{sec:level1} on page~\pageref{sec:level1},
+Table~\ref{tab:table1}, and Fig.~\ref{fig:epsart}.
+
+\section{Figures and Tables}
+Figures and tables are typically ``floats'' which means that their
+final position is determined by \LaTeX\ while the document is being
+typeset. \LaTeX\ isn't always successful in placing floats
+optimally.
+
+Figures may be inserted by using either the \texttt{graphics} or
+\texttt{graphix} packages. These packages both define the
+\verb+\includegraphics{#1}+ command, but they differ in how optional
+arguments for specifying the orientation, scaling, and translation of the
+figure. Fig.~\ref{fig:epsart} shows a figure that is small enough to
+fit in a single column. It is embedded using the \texttt{figure}
+environment which provides both the caption and the imports the figure
+file.
+\begin{figure}
+\includegraphics{fig_1}% Here is how to import EPS art
+\caption{\label{fig:epsart} A figure caption. The figure captions are
+automatically numbered.}
+\end{figure}
+
+Fig.~\ref{fig:wide} is a figure that is too wide for a single column,
+so instead the \texttt{figure*} environment has been used.
+\begin{figure*}
+\includegraphics{fig_2}% Here is how to import EPS art
+\caption{\label{fig:wide}Use the figure* environment to get a wide
+figure that spans the page in \texttt{twocolumn} formatting.}
+\end{figure*}
+
+The heart of any table is the \texttt{tabular} environment which gives
+the rows of the tables. Each row consists of column entries separated
+by \verb+&+'s and terminates with \textbackslash\textbackslash. The
+required argument for the \texttt{tabular} environment
+specifies how data are displayed in the columns. For instance, entries
+may be centered, left-justified, right-justified, aligned on a decimal
+point. Extra column-spacing may be be specified as well, although
+REV\TeX~4 sets this spacing so that the columns fill the width of the
+table. Horizontal rules are typeset using the \verb+\hline+
+command. The doubled (or Scotch) rules that appear at the top and
+bottom of a table can be achieved enclosing the \texttt{tabular}
+environment within a \texttt{ruledtabular} environment. Rows whose
+columns span multiple columns can be typeset using the
+\verb+\multicolumn{#1}{#2}{#3}+ command (for example, see the first
+row of Table~\ref{tab:table3}).
+
+Tables~\ref{tab:table1}-\ref{tab:table4} show various effects. Tables
+that fit in a narrow column are contained in a \texttt{table}
+environment. Table~\ref{tab:table3} is a wide table set with the
+\texttt{table*} environment. Long tables may need to break across
+pages. The most straightforward way to accomplish this is to specify
+the \verb+[H]+ float placement on the \texttt{table} or
+\texttt{table*} environment. However, the standard \LaTeXe\ package
+\texttt{longtable} will give more control over how tables break and
+will allow headers and footers to be specified for each page of the
+table. A simple example of the use of \texttt{longtable} can be found
+in the file \texttt{summary.tex} that is included with the REV\TeX~4
+distribution.
+
+There are two methods for setting footnotes within a table (these
+footnotes will be displayed directly below the table rather than at
+the bottom of the page or in the bibliography). The easiest
+and preferred method is just to use the \verb+\footnote{#1}+
+command. This will automatically enumerate the footnotes with
+lowercase roman letters. However, it is sometimes necessary to have
+multiple entries in the table share the same footnote. In this case,
+there is no choice but to manually create the footnotes using
+\verb+\footnotemark[#1]+ and \verb+\footnotetext[#1]{#2}+.
+\texttt{\#1} is a numeric value. Each time the same value for
+\texttt{\#1} is used, the same mark is produced in the table. The
+\verb+\footnotetext[#1]{#2}+ commands are placed after the \texttt{tabular}
+environment. Examine the \LaTeX\ source and output for
+Tables~\ref{tab:table1} and \ref{tab:table2} for examples.
+
+\begin{table}
+\caption{\label{tab:table1}This is a narrow table which fits into a
+narrow column when using \texttt{twocolumn} formatting. Note that
+REV\TeX~4 adjusts the intercolumn spacing so that the table fills the
+entire width of the column. Table captions are numbered
+automatically. This table illustrates left-aligned, centered, and
+right-aligned columns.  }
+\begin{ruledtabular}
+\begin{tabular}{lcr}
+Left\footnote{Note a.}&Centered\footnote{Note b.}&Right\\
+\hline
+1 & 2 & 3\\
+10 & 20 & 30\\
+100 & 200 & 300\\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\begin{table}
+\caption{\label{tab:table2}A table with more columns still fits
+properly in a column. Note that several entries share the same
+footnote. Inspect the \LaTeX\ input for this table to see
+exactly how it is done.}
+\begin{ruledtabular}
+\begin{tabular}{cccccccc}
+ &$r_c$ (\AA)&$r_0$ (\AA)&$\kappa r_0$&
+ &$r_c$ (\AA) &$r_0$ (\AA)&$\kappa r_0$\\
+\hline
+Cu& 0.800 & 14.10 & 2.550 &Sn\footnotemark[1]
+& 0.680 & 1.870 & 3.700 \\
+Ag& 0.990 & 15.90 & 2.710 &Pb\footnotemark[2]
+& 0.450 & 1.930 & 3.760 \\
+Au& 1.150 & 15.90 & 2.710 &Ca\footnotemark[3]
+& 0.750 & 2.170 & 3.560 \\
+Mg& 0.490 & 17.60 & 3.200 &Sr\footnotemark[4]
+& 0.900 & 2.370 & 3.720 \\
+Zn& 0.300 & 15.20 & 2.970 &Li\footnotemark[2]
+& 0.380 & 1.730 & 2.830 \\
+Cd& 0.530 & 17.10 & 3.160 &Na\footnotemark[5]
+& 0.760 & 2.110 & 3.120 \\
+Hg& 0.550 & 17.80 & 3.220 &K\footnotemark[5]
+&  1.120 & 2.620 & 3.480 \\
+Al& 0.230 & 15.80 & 3.240 &Rb\footnotemark[3]
+& 1.330 & 2.800 & 3.590 \\
+Ga& 0.310 & 16.70 & 3.330 &Cs\footnotemark[4]
+& 1.420 & 3.030 & 3.740 \\
+In& 0.460 & 18.40 & 3.500 &Ba\footnotemark[5]
+& 0.960 & 2.460 & 3.780 \\
+Tl& 0.480 & 18.90 & 3.550 & & & & \\
+\end{tabular}
+\end{ruledtabular}
+\footnotetext[1]{Here's the first, from Ref.~\onlinecite{feyn54}.}
+\footnotetext[2]{Here's the second.}
+\footnotetext[3]{Here's the third.}
+\footnotetext[4]{Here's the fourth.}
+\footnotetext[5]{And etc.}
+\end{table}
+
+\begin{table*}
+\caption{\label{tab:table3}This is a wide table that spans the page
+width in \texttt{twocolumn} mode. It is formatted using the
+\texttt{table*} environment. It also demonstates the use of
+\textbackslash\texttt{multicolumn} in rows with entries that span
+more than one column.}
+\begin{ruledtabular}
+\begin{tabular}{ccccc}
+ &\multicolumn{2}{c}{$D_{4h}^1$}&\multicolumn{2}{c}{$D_{4h}^5$}\\
+ Ion&1st alternative&2nd alternative&lst alternative
+&2nd alternative\\ \hline
+ K&$(2e)+(2f)$&$(4i)$ &$(2c)+(2d)$&$(4f)$ \\
+ Mn&$(2g)$\footnote{The $z$ parameter of these positions is $z\sim\frac{1}{4}$.}
+ &$(a)+(b)+(c)+(d)$&$(4e)$&$(2a)+(2b)$\\
+ Cl&$(a)+(b)+(c)+(d)$&$(2g)$\footnotemark[1]
+ &$(4e)^{\text{a}}$\\
+ He&$(8r)^{\text{a}}$&$(4j)^{\text{a}}$&$(4g)^{\text{a}}$\\
+ Ag& &$(4k)^{\text{a}}$& &$(4h)^{\text{a}}$\\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
+
+\begin{table}
+\caption{\label{tab:table4}Numbers in columns Three--Five have been
+aligned by using the ``d'' column specifier (requires the
+\texttt{dcolumn} package). Non-numeric entries (those entries without
+a ``.'') in a ``d'' column are aligned on the decimal point. Use the
+``D'' specifier for more complex layouts. }
+\begin{ruledtabular}
+\begin{tabular}{ccddd}
+One&Two&\mbox{Three}&\mbox{Four}&\mbox{Five}\\
+\hline
+one&two&\mbox{three}&\mbox{four}&\mbox{five}\\
+He&2& 2.77234 & 45672. & 0.69 \\
+C\footnote{Some tables require footnotes.}
+  &C\footnote{Some tables need more than one footnote.}
+  & 12537.64 & 37.66345 & 86.37 \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\textit{Physical Review} style requires that the initial citation of
+figures or tables be in numerical order in text, so don't cite
+Fig.~\ref{fig:wide} until Fig.~\ref{fig:epsart} has been cited.
+
+\begin{acknowledgments}
+We wish to acknowledge the support of the author community in using
+REV\TeX{}, offering suggestions and encouragement, testing new versions,
+\dots.
+\end{acknowledgments}
+
+\appendix
+
+\section{Appendixes}
+
+To start the appendixes, use the \verb+\appendix+ command.
+This signals that all following section commands refer to appendixes
+instead of regular sections. Therefore, the \verb+\appendix+ command
+should be used only once---to setup the section commands to act as
+appendixes. Thereafter normal section commands are used. The heading
+for a section can be left empty. For example,
+\begin{verbatim}
+\appendix
+\section{}
+\end{verbatim}
+will produce an appendix heading that says ``APPENDIX A'' and
+\begin{verbatim}
+\appendix
+\section{Background}
+\end{verbatim}
+will produce an appendix heading that says ``APPENDIX A: BACKGROUND''
+(note that the colon is set automatically).
+
+If there is only one appendix, then the letter ``A'' should not
+appear. This is suppressed by using the star version of the appendix
+command (\verb+\appendix*+ in the place of \verb+\appendix+).
+
+\section{A little more on appendixes}
+
+Observe that this appendix was started by using
+\begin{verbatim}
+\section{A little more on appendixes}
+\end{verbatim}
+
+Note the equation number in an appendix:
+\begin{equation}
+E=mc^2.
+\end{equation}
+
+\subsection{\label{app:subsec}A subsection in an appendix}
+
+You can use a subsection or subsubsection in an appendix. Note the
+numbering: we are now in Appendix \ref{app:subsec}.
+
+Note the equation numbers in this appendix, produced with the
+subequations environment:
+\begin{subequations}
+\begin{eqnarray}
+E&=&mc, \label{appa}
+\\
+E&=&mc^2, \label{appb}
+\\
+E&\agt& mc^3. \label{appc}
+\end{eqnarray}
+\end{subequations}
+They turn out to be Eqs.~(\ref{appa}), (\ref{appb}), and (\ref{appc}).
+\newpage %Just because of unusual number of tables stacked at end
+\bibliography{apssamp}% Produces the bibliography via BibTeX.
+
+\end{document}
+%
+% ****** End of file apssamp.tex ******

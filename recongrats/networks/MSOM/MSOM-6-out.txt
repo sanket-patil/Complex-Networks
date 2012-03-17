@@ -1,0 +1,169 @@
+No of Nodes: 28
+
+No of Edges: 28
+
+Connectance/Density: 0.037037037037037035
+
+Cost: 0.0014245014245014246
+
+Strongly connected: no
+
+No. of Paths: 98
+
+Connectivity: 0.12962962962962962
+
+Diameter: undefined
+
+Efficiency (upper bound): undefined
+
+APL: 2.020408163265306
+
+Efficiency (abs. avg., SECON): 0.494949494949495
+
+Efficiecy (normalized wrt star, SECON): 0.7424242424242425
+
+---------------------------------
+
+Degree Distribution
+
+InDegree of Manuf_0001: 0
+InDegree of Trans_0001: 1
+InDegree of Manuf_0002: 0
+InDegree of Trans_0002: 1
+InDegree of Manuf_0003: 0
+InDegree of Trans_0003: 1
+InDegree of Manuf_0004: 0
+InDegree of Trans_0004: 1
+InDegree of Manuf_0005: 0
+InDegree of Trans_0005: 1
+InDegree of Manuf_0006: 0
+InDegree of Trans_0006: 1
+InDegree of Manuf_0007: 2
+InDegree of Dist_0001: 1
+InDegree of Dist_0002: 1
+InDegree of Dist_0003: 1
+InDegree of Manuf_0008: 2
+InDegree of Dist_0004: 1
+InDegree of Dist_0005: 1
+InDegree of Dist_0006: 1
+InDegree of Manuf_0009: 3
+InDegree of Dist_0007: 1
+InDegree of Dist_0008: 1
+InDegree of Dist_0009: 1
+InDegree of Manuf_0010: 3
+InDegree of Dist_0010: 1
+InDegree of Dist_0011: 1
+InDegree of Dist_0012: 1
+
+OutDegree of Manuf_0001: 1
+OutDegree of Trans_0001: 3
+OutDegree of Manuf_0002: 1
+OutDegree of Trans_0002: 2
+OutDegree of Manuf_0003: 1
+OutDegree of Trans_0003: 1
+OutDegree of Manuf_0004: 1
+OutDegree of Trans_0004: 1
+OutDegree of Manuf_0005: 1
+OutDegree of Trans_0005: 2
+OutDegree of Manuf_0006: 1
+OutDegree of Trans_0006: 1
+OutDegree of Manuf_0007: 3
+OutDegree of Dist_0001: 0
+OutDegree of Dist_0002: 0
+OutDegree of Dist_0003: 0
+OutDegree of Manuf_0008: 3
+OutDegree of Dist_0004: 0
+OutDegree of Dist_0005: 0
+OutDegree of Dist_0006: 0
+OutDegree of Manuf_0009: 3
+OutDegree of Dist_0007: 0
+OutDegree of Dist_0008: 0
+OutDegree of Dist_0009: 0
+OutDegree of Manuf_0010: 3
+OutDegree of Dist_0010: 0
+OutDegree of Dist_0011: 0
+OutDegree of Dist_0012: 0
+
+InDegree Distribution (normalized)
+
+InDD: [ 0.0 0.03571428571428571 0.0 0.03571428571428571 0.0 0.03571428571428571 0.0 0.03571428571428571 0.0 0.03571428571428571 0.0 0.03571428571428571 0.07142857142857142 0.03571428571428571 0.03571428571428571 0.03571428571428571 0.07142857142857142 0.03571428571428571 0.03571428571428571 0.03571428571428571 0.10714285714285714 0.03571428571428571 0.03571428571428571 0.03571428571428571 0.10714285714285714 0.03571428571428571 0.03571428571428571 0.03571428571428571 ]
+
+OutDegree Distribution (normalized)
+
+OutDD: [ 0.03571428571428571 0.10714285714285714 0.03571428571428571 0.07142857142857142 0.03571428571428571 0.03571428571428571 0.03571428571428571 0.03571428571428571 0.03571428571428571 0.07142857142857142 0.03571428571428571 0.03571428571428571 0.10714285714285714 0.0 0.0 0.0 0.10714285714285714 0.0 0.0 0.0 0.10714285714285714 0.0 0.0 0.0 0.10714285714285714 0.0 0.0 0.0 ]
+
+Regularity Index (for indegree): 0.9202279202279202
+
+Regularity Index (for outdegree): 0.9202279202279202
+
+Mean indegree: 1.0
+
+Highest indegree: 3
+
+Mean outdegree: 1.0
+
+Highest outdegree: 3
+
+
+---------------------------------
+
+Node Eccentricity Values
+
+Ecc: [3 2 3 2 3 2 3 2 3 2 3 2 1 und und und 1 und und und 1 und und und 1 und und und ]
+
+Highest Eccentricity (diameter): 3
+
+Least Eccentricity (radius): 1
+
+Average Eccentricity: 2.125
+
+
+Most Eccentric Nodes (peripheral nodes): 
+
+Manuf_0001 Manuf_0002 Manuf_0003 Manuf_0004 Manuf_0005 Manuf_0006 
+
+Least Eccentric Nodes (central nodes): 
+
+Manuf_0007 Manuf_0008 Manuf_0009 Manuf_0010 
+
+
+---------------------------------
+
+Centrality Measures
+
+Node Centrality (Betweenness) Distribution: 
+
+Node Centrality: [ 0.0 0.17142857142857143 0.0 0.11428571428571428 0.0 0.05714285714285714 0.0 0.05714285714285714 0.0 0.11428571428571428 0.0 0.05714285714285714 0.17142857142857143 0.0 0.0 0.0 0.17142857142857143 0.0 0.0 0.0 0.2571428571428571 0.0 0.0 0.0 0.2571428571428571 0.0 0.0 0.0 ]
+
+Highest Node Centrality: 0.2571428571428571
+
+Mean Node Centrality: 0.05102040816326531
+
+Most Central Nodes (highly loaded nodes): 
+
+Manuf_0009 Manuf_0010 
+
+Least Central Nodes (less loaded nodes): 
+
+Manuf_0001 Manuf_0002 Manuf_0003 Manuf_0004 Manuf_0005 Manuf_0006 Dist_0001 Dist_0002 Dist_0003 Dist_0004 Dist_0005 Dist_0006 Dist_0007 Dist_0008 Dist_0009 Dist_0010 Dist_0011 Dist_0012 
+
+
+Edge Centrality Distribution: 
+
+Edge Centrality: [ 0.1326530612244898 0.09183673469387756 0.05102040816326531 0.05102040816326531 0.09183673469387756 0.05102040816326531 0.05102040816326531 0.05102040816326531 0.05102040816326531 0.05102040816326531 0.05102040816326531 0.05102040816326531 0.07142857142857142 0.07142857142857142 0.07142857142857142 0.07142857142857142 0.07142857142857142 0.07142857142857142 0.08163265306122448 0.08163265306122448 0.08163265306122448 0.08163265306122448 0.08163265306122448 0.08163265306122448 0.08163265306122448 0.08163265306122448 0.08163265306122448 0.08163265306122448 ]
+
+Highest Edge Centrality: 0.1326530612244898
+
+Mean Edge Centrality: 0.07215743440233237
+
+Most Central Edges (highly loaded edges): 
+
+Manuf_0001--Trans_0001 
+
+Least Central Edges (less loaded edges): 
+
+Manuf_0003--Trans_0003 Manuf_0004--Trans_0004 Manuf_0006--Trans_0006 Manuf_0007--Dist_0001 Manuf_0007--Dist_0002 Manuf_0007--Dist_0003 Manuf_0008--Dist_0004 Manuf_0008--Dist_0005 Manuf_0008--Dist_0006 
+
+
+----------------------
+

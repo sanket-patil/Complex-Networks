@@ -1,0 +1,25 @@
+function [avg_case_sr,worst_case_sr] = structural_robustness(adj_matrix)
+
+local_matrix = adj_matrix; 
+
+sparse_mat = sparse(adj_matrix); 
+
+[S, C] = graphconncomp(sparse_mat); 
+
+for i = 1 : length(adj_matrix) 
+    
+    local_matrix(i,:) = []; 
+    
+    local_matrix(:,i) = []; 
+    
+    local_sparse_mat = sparse(local_matrix); 
+    
+    [local_S, local_C] = graphconncomp(local_sparse_mat); 
+    
+    for j = 1 : local_S
+        
+    end
+    
+    
+    
+end 

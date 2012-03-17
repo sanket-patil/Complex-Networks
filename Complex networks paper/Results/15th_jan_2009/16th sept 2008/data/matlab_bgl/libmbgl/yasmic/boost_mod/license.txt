@@ -1,0 +1,6 @@
+These files are modifications to files contained within the Boost library.  
+
+I claim no additional restrictions to the modifications made to these files.  See the original license files for details.
+
+
+

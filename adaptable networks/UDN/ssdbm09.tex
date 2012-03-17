@@ -1,0 +1,543 @@
+
+%
+%  $Description: ssdbm09 $
+%
+%  $Author: xwang $
+%  $Date: 2004/04/01 00:47:55 $
+%  $Revision: 1.8 $
+%
+
+\documentclass{llncs}
+\usepackage{epsfig,endnotes,citesort,latexsym,times,graphicx,subfigure,color,colordvi,amssymb,algorithm2e} %,amsthm}
+
+%,amsmath
+
+%-------------------------------------------------------------------------
+% take the % away on next line to produce the final camera-ready version
+\pagestyle{empty}
+
+\newcommand{\tm}[1]{{\color{red}{\it TM: #1}}}
+
+\newcommand{\affa}{$^{1}$}
+\newcommand{\affb}{$^{2}$}
+\newcommand{\affc}{$^{3}$}
+\newcommand{\affd}{$^{4}$}
+\newcommand{\affe}{$^{5}$}
+
+
+
+\newtheorem{Theorem}{Theorem}
+%\newtheorem{corollary}{Corollary}
+%\newtheorem{lemma}{Lemma}
+%\newenvironment{proofsketch}{\noindent \emph{Proof Sketch.}\ }{$\Box$ \medskip} %\qed\par\vskip 4mm\par}
+
+\def\apd{\ensuremath{\mathrm{AdaptPD}}}
+\def\hpd{\ensuremath{\mathrm{HeuPD}}}
+\def\opd{\ensuremath{\mathrm{OnlinePD}}}
+\def\opt{\ensuremath{\mathrm{OPT}}}
+\def\opda{\ensuremath{\mathrm{OPDA}}}
+\def\opdc{\ensuremath{\mathrm{OnlinePDC}}}
+\def\calg{\ensuremath{\mathrm{CALG}}}
+\def\alg{\ensuremath{\mathrm{ALG}}}
+\def\T{\ensuremath{\mathcal{T}}}
+%-------------------------------------------------------------------------
+
+\newcommand{\eat}[1]{}
+\newcommand{\captionspace}{-10pt}
+
+\addtolength{\textfloatsep}{-5pt}
+\addtolength{\topskip}{0pt}
+\addtolength{\topmargin}{0pt}
+\addtolength{\intextsep}{-5pt}
+\addtolength{\parskip}{-1pt}
+
+\makeatletter
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+   {-1ex \@plus -1ex \@minus -.2ex}%
+   {1ex \@plus.2ex}%
+   {\normalfont\large\sffamily\bfseries}}
+%\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+%   {-.5ex\@plus -1ex \@minus -.2ex}%
+%   {1ex \@plus .2ex}%
+%   {\normalfont\normalsize\sffamily\bfseries}}
+%\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+%   {1.5ex\@plus 1ex \@minus .2ex}%
+%   {-1.5ex \@plus .2ex}%
+%   {\normalfont\normalsize\sffamily\bfseries}}
+\renewcommand\paragraph{\@startsection{subsubsection}{4}{\z@}%
+   {1.5ex\@plus 1ex \@minus .2ex}%
+   {-1.5ex \@plus .2ex}%
+   {\normalfont\normalsize\sffamily\bfseries}}
+%\setcounter{secnumdepth}{4}
+\makeatother
+
+%\title{Schema Design in Caches for Scientific Database Federations}
+\title{Providing Scalable Data Services in Ubiquitous Networks}
+
+\author{%
+{Raghvendra Prasad\affa, Sanket Patil\affb, Tanu Malik\affa, Amitabh Chaudhary\affc, Venkat Venkatasubramanian\affa}
+%\vspace{1.6mm}\\
+%\fontsize{10}{10}\selectfont\itshape
+%\affa\hspace{0.12cm}Purdue University, USA \\
+%\fontsize{9}{9}\selectfont\ttfamily\upshape
+%tmalik@purdue.edu
+%\vspace{1.6mm}\\
+%\fontsize{10}{10}\selectfont\itshape
+%\affb\hspace{0.12cm}Johns Hopkins University, USA \\
+%\fontsize{9}{9}\selectfont\ttfamily\upshape
+%\{xwang,randal\}@cs.jhu.edu
+%\vspace{1.2mm}\\
+%\fontsize{10}{10}\selectfont\rmfamily\itshape
+%\affc\hspace{0.12cm}Carnegie Mellon University, USA \\
+%\fontsize{9}{9}\selectfont\ttfamily\upshape
+%ddash@cs.cmu.edu
+%\vspace{1.2mm}\\
+%\fontsize{10}{10}\selectfont\rmfamily\itshape
+%\affd\hspace{0.12cm}University of Notre Dame, USA \\
+%\fontsize{9}{9}\selectfont\ttfamily\upshape
+%achaudha@cse.nd.edu
+%\vspace{1.2mm}\\
+%\fontsize{10}{10}\selectfont\rmfamily\itshape
+%\affe\hspace{0.12cm}Swiss Federal Institutes of Technology, Switzerland \\
+%\fontsize{9}{9}\selectfont\ttfamily\upshape
+%anastasia.ailamaki@epfl.ch
+}
+
+\institute{
+\affa\hspace{0.12cm}Purdue University, USA \\
+tmalik, prasad, venkat@purdue.edu\\
+\affb\hspace{0.12cm}IIIT, Hyderabad, India \\
+%\{xwang,randal\}@cs.jhu.edu\\
+\affc\hspace{0.12cm}University of Notre Dame, USA \\
+achaudha@cse.nd.edu\\
+%\affd\hspace{0.12cm}University of Notre Dame, USA \\
+%achaudha@cse.nd.edu  \\
+%\affe\hspace{0.12cm}Swiss Federal Institutes of Technology, Switzerland \\
+%anastasia.ailamaki@epfl.ch
+}
+
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The topology is a fundamental part of a network that governs connectivity between nodes, the amount of data flow and the efficiency of data flow between nodes. In traditional networks, due to physical limitations, topology remains static for the course of the network operation. Ubiquitous data networks, alternatively, are more adaptive and can be configured for changes in their topology. This flexibility in controlling their topology makes them very appealing and an attractive medium for supporting "`anywhere, anyplace"' communication. However, it raises the problem of designing a dynamic topology i.e., reconfiguring the topology when communication requirements change over time. We describing methods that determine an optimal topology configuration of a ubiquitous data network (UDN) in which communication requirements remain static over time. We then describe a a formal framework based on metrical task systems that decides when and how topology should be reconfigured as communication requirements change over time. 
+We perform experiments on a UDN that needs to provide data services to large number of clients an in which communication requirements vary. Our experiments validate the performance of our methods always reconfiguring the system on a need basis.
+
+%
+%We consider a ubiquitous data network (UDN) consisting of replica nodes that provide data services to large number of clients and in which the objective is to minimize the flow of data through a data network. We start with describing methods that determine an optimal topology configuration of such a UDN. 
+\end{abstract}
+
+\section{Introduction}
+    
+
+In the vision of pervasive computing, users will exchange information and control their environments from anywhere using various 
+wireline/wireless networks and computing devices \cite{}. Although such a definition of pervasive computing is very appealing to users, it has been reported that the technological path for building such an anytime, anywhere networking environment is less clear \cite{}. One of the most important technical issue is the auto-configuration of the topology between the devices. Traditional computing environemnts such as the Internet the native routing infrastructure is fixed and the topology is predomonantly static. However in pervasive computing the topology needs to be flexible. 
+
+ 
+We are particularly interested in studying how the underlying topology influences data management services that run on top of it. Data mgmt in Pervasive computing environments present entirely new set of challenges because of the fact that data may be acquired and disseminated at various points within the system. In addition demands for data may change significantly over time. The routing of the data will therefore govern the overall efficiency and cost of delivering this data. To support various kinds of dm services, pervasive system would not only need to find the optimal topology but also how to rapidly configure themselves that minimize the operation cost for disseminating data given a set of communication requirements.
+
+%With the increase in the data capacities of hand-helds and cellular devices, the ubiquitous network is quickly turning into a data network in which the goal is to not only ensure connectivity between devices but also acquire and disseminate as much data as possible in the most cost efficient way. To conceive such a data network, in the past, ubiquitous systems have tended to be more like a peer-to-peer (P2P) architecture in which there are no large centralized resources and scalability of data dissemination is primarily achieved through distributed indexes as the network grows in size and population. However, in the context of P2P networks, a high emphasis is placed on the “symmetric” nature of the data structure, i.e.,  all peers are assumed to have nearly equal degree in forming the index. This is particularly not true for ubiquitous data networks (UDNs) in which a wide level of heterogeneity exists and a symmetric topology between nodes might not be the ideal one for acquiring and disseminating data.
+%
+
+%Consequently data networks in ubiquitous computing are increasingly being compared to complex networks of interconnected entities
+%in which nodes self-organize themselves to achieve a desired level of efficiency and robustness in the network. Such complex networks are increasingly being studied in search of interesting properties especially following the work by Strogatz, Barab´asi and Albert [2]–[4]. In particular, complex networks with power law degree distributions have been shown to be highly efficient and networks with properties such as low average path lengths (APL) and high clustering, are very robust. Even though a ubiquitous data network is comparable to a complex network, in a UDN no one network topology remains optimal \cite{}. Thus UDNs are faced not only with problem of deciding what is an optimal topology under a given set of communication requirements but also whether the topology is an optimal one under the current communication requirements.
+
+%A great body of work in complex networks and native networks such as the physical Internet has been devoted to the problem of designing optimal network topologies under arbitrary optimality requirements such as efficiency, robustness and cost. While much of the work can be applied to designing an optimal topology for a UDN, a UDN is typically characterized by nodes of varying data and compute capacities, a dynamic network in which nodes join and leave and more importantly their communication requirements change drastically over a period of time. In such an environment, a topology that may be optimal sometime ago may not be optimal now. Consider a 12 node network as shown in Figure \ref{}, which can be arranged in a variety of topologies such as the star, circle or hub-and-spoke. The figure also shows the communication requirements between pair of nodes as well as the probability of a node to leave the network. The star even though highly efficient given the communication requirements, is a poor topology for the network as all nodes have high probability of leaving the system. If the central node leaves the system, all other nodes will be disconnected. In this regard the circle offers the maximum level of connectivity but decreases the efficiency of the system under the given communication requirements. The hub-and spoke topology as shown in Figure \ref{} offers a better balance between efficiency and connectivity. But the system may need to keep switching between the two as the circle is more relevant to communication pattern a and the hub-and-spoke is more relevant to communication pattern b. 
+
+
+%While the star would be most efficient for a udn, it The most  the efficiency of a ubiquitous data network, often measured as the end latency perceived by users, varies when it runs on different topologies. , raising the problem of finding the topology that maximizes the performance for a given set of communication requirements at given point of time as well as when and how topology should be reconfigured when requirements change.
+If the communication requirement is constant over time,
+the optimal choice of overlay topology is static. If communication
+requirements change over time, for example, from
+the ones shown in Fig \ref{} to the ones shown in Fig \ref{},
+it may be better for the UDN to be reconfigured. 
+If the network is small or has a moderate number of nodes, it is feasible for a
+provider to monitor and statistically model the communication
+requirements in the system. However, a UDN often consists of a very large number of nodes making the topology reconfigurability
+problem even more intractable.
+The fundamental question then is when
+and how the overlay topology should be reconfigured under
+dynamic communication requirements.
+
+Reconfiguring a topology cannot be done at every time step even if new there exists a topology that improves efficiency for the new communication requirements. Even though a UDN can be auto-configured in a small time scale,
+changing network topology is not cost-free; it incurs both management overhead as well as potential disruption of end-to-end flows; data in transit may get lost, delayed, or erroneously routed. In the presence of these costs, it might be useful to monitor topology changes at a finest granularity but the topology should only be changed if the long run benefits of making a change
+justifies the cost of the change.
+
+
+In this paper, we are most interested in the dynamic topology design problem, i.e., the problem of determining
+when to reconfigure a topology as communication requirements change dynamically. In order to understand this problem, we first
+describe the static topology design problem. In particular, we provide an
+LP-based formulation for solving the static topology design problem. 
+The solution to the formulation is used later as a subroutine in the
+solution to the dynamic problem. In Section \ref{} we concentrate
+on the reconfiguration framework that models the dynamic topology problem as
+a metrical task system. Task systems are general systems that capture the cost of
+reconfiguration between two topologies in addition to the cost of
+satisfying a given demand in a given topology. By including the reconfiguration cost the system prevents
+oscillations into states that are sub-optimal in the long run.
+
+The reconfiguration decisions taken by our framework guide the topology selection
+any time the communication requirements change. The distinguishing part of our framework is that reconfiguration decisions require
+no statistical modeling or aggregation of the communication requirements from the service provider.
+This lack of making any assumptions about how the communication requirements may change over time allows the framework to provide
+a minimum level of guarantee of adapting to changes in the communication requirement.
+To the best of our knowledge most topology reconfiguration frameworks are based on 
+heuristic policies and provide no theoretical evidence or a systematic way of understanding when to change a topology.
+We evaluate our algorithms in Section \ref{}
+and conclude in Section \ref{}. 
+
+
+%In this paper, we are concerned with the topology reconfiguration problem under dynamic communication requirements. 
+%While there are several topologies that can be feasible given a set of nodes in a UDN, the more interesting topologies are those that
+%are robust. In a robust topology the system is able to carry out its functions despite some damage done
+%to it, such as the removal of some of the nodes and/or edges in a network. Consider a 4 node network 
+%as shown in fig. It is clear that a star is not robut and a circle is. But if all nodes want to communicate with each other a circle is a
+%useful topology. However, if nodes are communicating based on their context than connecting with their nearest neighbors might be 
+%a topology that offers lower diameter and thus more efficiency but still a high degree of robustness. Thus it may be useful for a UDN to switch 
+%between hub-spoke and circle as and when requirements change. 
+%
+%
+%Intuitively, if in the long run the benefits of making a change
+%in the UDN topology cannot justify the costs of the change,
+%the UDN topology should not be changed. Even if a change
+%is favorable, the next UDN topology should take into account
+%the long-term changes in communication requirements.
+%Thus while it would be desirable to monitor changes at the granularity of demand, it may be useful to only change if there is sufficient penalty incurred while remaining in a topology.
+ 
+\section{Related Work}
+
+The topology design problem has received significant interest in large information systems such as 
+optical networks \cite{}, data-centric peer-to-peer networks \cite{} and more recently complex networks \cite{}. 
+In these systems the objective is to design an optimal topology under arbitrary optimality requirements of efficiency, cost, balance of load on the servers and robustness to failures. The design of an optimal topology is obtained by deriving measures of efficiency, robustness, load and cost from past usage patterns and then using network simulation to obtain an optimal topology.
+Such simulations are extensively described in \cite{} in which optimal topologies are obtained when there are conflicting performance 
+requirements that need to be balanced. However, in most of these systems a topology once chosen remains static for the duration of the system operation.
+
+Given an optimal topology and a stable communication pattern, the problem of determining how to use the edges of the topology 
+such that the cost of using the topology is minimized is itself an intractable problem. Several versions of the problem \cite{} have been studied in computer networks under the class of multi-commodity flow problems \cite{}. In this paper, for simplicity, we have restricted ourselves to single commodity flows \cite{} which is a suitable model when considering communication requirements over a set of replica nodes. Our primary focus is to understand how to adaptively move between optimal topologies when communication patterns change dynamically. 
+
+In most adaptive networks \cite{} such as UDNs and overlay networks \cite{}, communication pattens vary so significantly that it is often difficult to obtain an representative usage pattern to perform a simulation. In the past \cite{}, research proposed to perform simulation repeatedly to obtain an optimal topology and the system reconfigures itself. However, in these systems communication patterns are aggregated over large time scales and the reconfiguration is slow. Recently adaptive networks have focused on auto-configuration in which systems self-monitor the communication requirements and reconfigure the topology as when communication patterns change drastically. The dynamic topology problem has been recently studied in the context of overlay networks in which topologies can be designed either in the favor of native networks, which improves performance
+or the ultimate customers which reduces the operation cost of the whole system \cite{}. In this paper, we
+have studied the similar problem in the context of UDNs.
+
+\cite{} consider the 
+the problem of determining dynamic topology reconfiguration for service overlay
+networks with dynamic communication requirement, and the
+goal is to find the optimal reconfiguration policies that
+can minimize the potential overall cost of using an overlay. 
+While their work is very similar in spirit to ours, their methods are limited to 
+very small networks in which a statistical model for the dynamic communication 
+requirements can be built. Consequently they propose heuristic methods for constructing different flavors
+of reconfiguration policies. On the contrary, in this paper we provide a systematic study
+with theoretical evidence for the
+advantage of reconfigurability.
+ 
+\section{Minimizing the Cost of Data Sharing in a UDN}
+
+We consider a UDN established by an application service provider to provide critical services across the network. In such a UDN the provider places replicas at strategic locations to receive query requests and disseminate data. Clients (which can be wired or wireless) make connections to data sources and send queries which result in a variable amount of data being transfered from the replica to the client. The topology of the network determines the cost the application service provider will have to incur in routing the result of each client query on the network. Ideally, the service provider would like to use those edges of the topology through which the cost of transferring the data is minimized. 
+ 
+Let $P = (P_1,\ldots,P_N)$ be the set of data nodes in the network that correspond to the replica nodes, $C=(C_1,\ldots,C_M)$ be the set of client nodes and $V \supset P \cup C$ be the set of all nodes in the network. Let $c$ be the link matrix to denote the cost of sending unit data (1 byte) through each pair of nodes. Let $b$ be the link matrix to denote the maximum amount of bytes that can be sent on any edge. Let each client receive an online sequence of queries q be the queries and let r be their corresponding expected result size. r demotes the comunication req of clients. We denote the communication requirements at all clients at time t by $\bar{Q(t)}=(Q_{C_{1}}(t), \ldots, Q_{C_{M}}(t))$.
+
+We choose a feasible set of topologies for the UDN.
+Theoretically, there are
+a total of $2^{n(n-1)/2}$ possible topologies over $n$ nodes.
+However, not all of these topologies are desirable in practice.
+A topology is usually required to be connected so
+that every node remains contact with the rest of the 
+network. In addition it should have some capabilities for distributing the amount of data on the network.
+This ability of the topology to distribute load among nodes is measured as the 
+skew in degree distribution. We define this as the difference in the
+maximum degree in the graph $\hat{p}$ and the mean degree of the nodes $\bar{p}$.
+For a connected graph of $n$ nodes, the worst skew occurs for the star
+topology. The central node has a degree of $n - 1$ and all the nodes surrounding
+it have a degree of 1. Therefore, the worst skew is $\frac{(n-1)(n-2)}{n}$
+The best skew is 0, when all the nodes have the same
+degree. This occurs when the topologies are regular graph topologies
+as in a circular topology or a clique. 
+Thus, ability to distribute load in a topology is a mapping from a value in the interval
+$\left[0,\frac{(n-1)(n-2)}{n}\right]$ to a value in the interval $[0,1]$.
+We denote the set of feasible topologies by 0-1 adjacency matrices $\mathcal{T} = {T_1, T_2, \ldots, T_l}$.
+
+
+Finally, a topology reconfiguration policy is the sequence
+of topologies $T = (T_1, \ldots, T_n), T_i \in \mathcal{T}$ used by the UDN over
+time in response to the communication requirement,
+$\bar{Q(t)}$, changing over time. 
+ The total cost is defined as
+\begin{equation}
+cost(\sigma,S) =  \sum_{i=1}^{n}q_i(S_i) + \sum_{i=0}^{n-1} d(S_i,S_{i+1}),
+\end{equation}
+in which the first term is the sum of costs of each query in $\sigma$ under the
+corresponding configuration and the second term is the total cost to transition
+between configurations in S. Note, if $S_{i+1} = S_i$ there is no real change
+in the configuration schedule and incurred transition cost is zero.
+An offline optimal algorithm \opt\ knows the entire $\sigma$ and obtains a configuration schedule $S$ with the minimum cost.
+An online algorithm \alg\ for \apd\, determines $S=(S_0, . . . , S_n)$
+without seeing the complete workload $\sigma=(q_1, . . . , q_n)$.
+Thus \alg\ determines each physical configuration $S_i$,
+based on the so far known workload $(q_1, . . . , q_i)$ and makes no
+assumptions about the future workload in advance.
+
+
+\subsection{The Static Topology Problem}
+
+given any edge in a topology t, we know that the cost of flowing a unit amount of data through that  edge is 
+he. Let fe be the amt of bytes that flow through this edge in order to satisfy the communication requirement at a client.
+Then the overall cost to support commun req of all clients is the cost of flowing data thr all the edges. formally
+\begin{equation}
+\sum_{(u,v) \in E} \left|f_{u,v}\right|. h(u,v)
+\end{equation}
+
+clearly the above should be minimized subject to the constraints:
+The flow in an edge should not exceed its capacity and there is no excess reverse flow in an edge.
+\begin{equation}
+\forall (u,v) \in E: f_{u,v} = - f_{v,u} \textit{ and } \left|f_{u,v}\right| \le b(u,v)
+\end{equation}
+We assume that the replica nodes do not have any communication requriements. 
+\begin{equation}
+\forall p \in P, \forall \textit{ u } \in \textit{neighbors of } p: f_{u,p} \le 0
+\end{equation}
+Finally, the flow constraint for satisfying all the demand.
+\begin{equation}
+\forall c \in C: \sum_{u \in \textit{ neighbors of } c} f_{u,c} = Q_c
+\end{equation}
+
+
+The above is minimized for a given coom req at atimt instance t and a given topology 
+if the data are routed
+through using minimum-operation-cost paths,
+The static topology design problem is the problem
+of finding a topology T , under the constraints of
+connectivity and degree-bound, that can minimize the cost
+in Equation \ref{} for a communication req Q at time t. We term
+such a topology optimal-static topology for Q(t) and denote it
+by T ¤(Q(t)). Similar to most other topological design problems,
+the static topology design problem can be modeled
+as an linear programming problem and is an NP-hard
+problem. 
+
+If the communication requirement Q(t) is constant over
+time, then the optimal overlay
+topology reconfiguration policy is one that always uses the
+optimal-static topology for Q, i.e., Y (t) = T ¤(C) for all t.
+
+\subsection{The Reconfiguration Cost}
+
+Every time the system reconfigures its topology to adapt to changes in communication requirements, a reconfiguration cost is incurred. This cost is the overhead or the impairment to performance incurred by the transition from one topology to another.
+Various costs could be incurred during a topology reconfiguration, depending on the implementation details of the
+UDN. For example, establishing and changing links incurs control and management
+overhead which can be translated to energy costs in a wireless network or 
+costs paid to ISPs in a wired network or a combination of both in wired/wireless setting. 
+Any fraction of data in transit during topology reconfiguration is subject to
+routing disturbance leading to a rerouting overhead. Depending
+on the UDN implementation, when topologies change, data in transit may wander through a path
+with a high operation cost. Finally, rerouting overhead can
+be magnified at the end-systems.
+
+In this paper, we assume reconfiguration costs as the cost of auto-configuring the entire network. Configuring a network involves 
+establishing basic IP-level parameters such as IP addresses and addresses of key servers.
+Auto-configuration involves automatic distribution of these IP configuration parameters in the entire network.
+In the wired networking environment, protocols such as Point-to-Point Protocol (PPP) \cite{} , Dynamic
+Host Configuration Protocol (DHCP) \cite{}, and Mobile IP \cite{} can configure individual hosts. Similarly there are protocols for such as PPP for serial links and DHCP for broadcast LANS. In the pervasive environments, DCDP is a popular protocol for auto-configuration. In DCDP auto-configuration is done by 
+recursively splitting the address pool down a spanning tree formed out of the graph topology. 
+Thus the total configuration cost of the network is essentially proportional to the
+height of the spanning tree \cite{}. Since we are considering the cost of reconfiguring a topology, we would need to autoconfigure the network twice once for reclaiming the addresses from the old topology 
+and then assigning the addresses on the new topology. 
+
+A general approximate measure for the reconfiguration cost is the 
+total number of links that need to be changed during a transition
+\begin{equation}
+d(T_{old},T_{new}) = \sum g(T_{old}) + g(T_{new}) 
+\end{equation}
+in which $g(\cdot)$ is the auto-configuration cost and is proportional to the height of the spanning tree in each topology.
+
+
+\section{The Topology Reconfiguration Problem with dynamic demand requirements}
+
+\subsection{Topology Reconfiguration Policies}
+Given the communication
+patterns, X(t), a reconfiguration policy, Y (t), is essentially
+a set of rules specifying when and how the overlay topology
+should be reconfigured. The following are three examples.
+
+Policy1: Find an average demand over the last 10 demands and keep switching to that configuration.
+Policy2: Find the static optimal after every 10/20 demands and jump to that configuration.
+Policy 3: Run for each demand and keep jumping to that configuration.
+
+Policy 4: 
+
+\subsubsection{Related Problems:}
+Online ski rental is a classical rent-or-buy problem.
+A skier, who doesn't own skis, needs to decide before every
+skiing trip that she makes whether she should rent skis for
+the trip or buy them. If she decides to buy skis, she will not
+have to rent for this or any future trips. Unfortunately, she
+doesn't know how many ski trips she will make in future,
+if any. This lack of knowledge about the future is a defining
+characteristic of on-line problems \cite{BR98}. A well known
+on-line algorithm for this problem is rent skis as long as the
+total paid in rental costs does not match or exceed the purchase
+cost, then buy for the next trip. Irrespective of the
+number of future trips, the cost incurred by this online algorithm
+is at most twice of the cost incurred by the optimal
+offline algorithm.
+
+If there were only two configurations and the cost function $d(\cdot)$ satisfies symmetry,
+the \opd\ problem will be nearly identical to online ski rental.
+Staying in the current configuration corresponds to renting skis and
+transitioning to another configuration corresponds to buying skis.
+Since the algorithm can start a ski-rental in any of the states,
+it can be argued that this leads to an algorithm that cost no more than
+four times the optimal.
+
+In larger number of configurations the key issue in establishing a
+correspondence with the online ski rental problem is in deciding
+which configuration to compare with the current one. When the costs are
+symmetrical, Borodin et. al \cite{Borodin92} use \emph{components} instead of configurations to
+perform an online ski rental. In particular their algorithm
+recursively traverses one component until the query execution cost incurred
+in that component is approximately that of moving to the other component, moving
+to the other component and traversing it (recursively), returning to the
+first component (and completing the cycle) and so on.
+To determine components, they
+consider a complete, undirected graph $G(V,E)$ on $\mathcal{S}$
+in which $V$ represents the set of all configurations, $E$ represents
+the transitions, and the edge weights are the transition costs.
+By fixing a minimum spanning tree (MST) on $G$, components are recursively determined
+by pick the maximum weight edge, say $(u, v)$, in the MST, removing it from the MST.
+This partitions all the configurations into two smaller components and the
+MST into two smaller trees. The traversal is defined in Algorithm \ref{alg:traversal}.
+
+This algorithm is shown to be $8(N-1)$-competitive \cite{Borodin92}. Recall, \alg\ is said to be $\alpha$-competitive if
+there exists a constant $b$ such that for every finite query sequence $\sigma$,
+\begin{equation}
+cost(\texttt{ALG}\ on\ \sigma) \leq \alpha*cost(\texttt{OPT}\ on\ \sigma) + b.
+\end{equation}
+\opt\ is the offline optimal that has complete knowledge of $\sigma$.
+%\bibliographystyle{splncs}
+%\bibliography{ssdbm09}
+
+% the following vfill coursely balances the columns on the last page
+
+
+$d$ is any function that
+satisfies the following properties:
+\begin{enumerate}
+\item $d(S_i, S_j) \ge 0, \forall i \neq j, S_i, S_j \in \mathcal{S}$ (positivity);
+\item $d(S_i, S_i) =  0, \forall i \in \mathcal{S}$ (reflexivity); and
+\item $d(S_i, S_j) + d(S_j, S_k) \ge d(S_i, S_k), \forall S_i, S_j, S_k \in \mathcal{S}$ (triangle inequality)
+%\item  $d(S_i, S_j) \neq d(S_j, S_i) \forall S_i, S_j \in \mathcal{S}$
+\end{enumerate}
+In particular, $d$ does not satisfy the symmetry property,
+\emph{i.e.,} $\exists S_i, S_j \in \mathcal{S}\;d(S_i, S_j) \neq d(S_j, S_i)$.
+%e.g., the cost of creating an index is not the same as removing it.
+This asymmetry in transition costs exists because the sequence of operations (i.e. insertion or
+deletion) required for making physical
+design changes in a database exhibit different costs.
+
+\begin{algorithm}[ht]
+    \SetLine
+    \KwIn{Tree: $F(V,E)$}
+    \KwOut{Traversal for $F$: $\T$}
+    \uIf{$E = \{\}$} {$\T \leftarrow \{\}$\;}
+    \uElseIf{$E = \{(u,v)\}$} {Return $\T$: Start at $u$, traverse to
+      $v$, traverse back to $u$\;}
+    \Else{
+      Let $(u,v)$ be a maximum weight edge in $E$, with weight
+      $2^M$\;
+      On removing $(u,v)$ let the resulting trees be $F_1(V_1,E_1)$
+      and $F_2(V_2,E_2)$, where $u \in V_1$, and $v \in V_2$\;
+      Let maximum weight edges in $E_1$ and $E_2$ have weights
+      $2^{M_1}$ and $2^{M_2}$\ respectively;
+      $\T_1 \leftarrow \mathsf{traversal}(F_1)$\;
+      $\T_2 \leftarrow \mathsf{traversal}(F_2)$\;
+      Return $\T$: Start at $u$, follow $\T_1$ $2^{M-M_1}$ times, traverse
+      $(u,v)$, follow $\T_2$ $2^{M-M_2}$ times, traverse $(v,u)$\;
+    }
+    \caption{$\mathsf{traversal}(F)$}
+    \label{alg:traversal}
+      \vspace{\captionspace}
+\end{algorithm}
+
+\section{Experiments}
+
+We first describe our experimental set-up and then . Our curent objective is to get a validation of our policies through a simulated environment. Thus while our set-up represents real-world pervasive environments, doing experiments with real data is part of future work. The ex 
+
+%Topology generation
+
+%Demand sequence generation
+Communication requirements in a pervasive environment are bursty. To model these demands we 
+consider we X(t) as a continuous Markov process. 
+Dynamics are created by adding seasonal components (5) and a random walk process (1) to the mean. 
+The size of the result 
+
+%Calculating the cost of static topology.
+
+%Calculating the cost of reconfiguration.
+
+%Comparison Methods
+Policy5 has polynomial-time complexity and finds 
+the minimal spanning tree using the Prim’s algorithm. It is a general algorithm in that
+it makes no assumptions about the workload. However, this generality comes at a cost.
+Namely, given some knowledge about the characteristics of a specific workload, we can
+design highly tuned workload adaptive algorithms. To measure the cost of generality, we
+compare it with other policies described in Section \ref{}. 
+
+%Performance Criteria
+We measure operational costs in terms of a dollar cost for 
+We associate a dollar cost $\rho$ with the 
+We measure the cost of the algorithms in terms of average
+response time of queries executed in SDSS. This is the measure from the time a query
+is submitted until the results are returned. If a transition to a new configuration is necessary,
+the algorithm undergoes a transition before executing the query. This increases
+the response time of the current query but amortizes the benefit over future queries. Our
+results reflect average response time over the entire workload.
+
+\subsection{Results}
+
+\subsection{Cost of Reconfiguration}
+
+We compute the cost of satisfying a query sequence under a topology schedule generated by various policies.
+figure \ref{} shows the division of operational costs and the cost of transitioning between topologies.
+Policy5 improves on the cost of Policy1 by a factor of Y. This is a very encouraging result for pervasive environments
+where devices are resource-constrained and policies that improve operation costs are needed. However, Policy 3 
+further improves cost by Y. This is because Policy3 relies on the predictive modeling of the demand. However, the
+improvement is low considering that Policy5 is general and makes no assumptions 
+regarding workload access patterns. Policy1 suffers due to being over-reactive making changes even when they are not required and incurs a very high transition cost.
+
+Another interesting feature of the results is that Policy5 incurs much lower transition
+costs than Policy4. This artifact is due to the conservative nature of Policy5.
+It evaluates only two alternatives at a time and transitions only if it expects significant
+performance advantages. On the other hand, Policy4 responds quicker to workload
+changes by evaluating all candidate topologies simultaneously and choosing a topology
+that benefits the most recent sequence of queries. This optimism of Policy4
+is tolerable in this workload but can account for significant transition costs in workloads
+that change even more rapidly.
+
+\subsection{Quality of a Schedule}
+
+In this experiment we compare the quality of schedule generated over the length of the sequence.
+The better the policy, its schedule will mimic that of the static optimal.
+
+\subsection{Effect of Degree Bound}
+
+As discussed in Section II, the degree bound of an overlay
+characterize the types of link maintenance costs that are not
+directly related to the bandwidth consumption for delivering
+user data. It reflects an overlay network provider’s aversion
+to these types of cost. In this section, we are interested in
+understanding how dynamic topology reconfiguration policies
+are affected by the degree bound, and the other way, what
+dynamic topology reconfiguration implies to the choice of
+degree bound.
+Fig. 14 shows how the degree of an overlay network affects
+the cost of the reconfiguration policies. Most parameters for
+the experiment are the same as those given in Table I. The
+transitions between communication patterns are Markovian.
+From each communication pattern, the system can make up
+to 4 transitions and the transition rates are random values in
+range [1,5]. 
+ 
+ 
+\end{document}
