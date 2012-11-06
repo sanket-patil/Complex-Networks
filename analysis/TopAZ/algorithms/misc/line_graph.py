@@ -1,0 +1,3 @@
+
+def getLineGraph(gr):
+    pass

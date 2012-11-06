@@ -1,0 +1,134 @@
+@article{reggiani2010connectivity,
+  title={Connectivity and concentration in airline networks: a complexity analysis of Lufthansa's network},
+  author={Reggiani, A. and Nijkamp, P. and Cento, A.},
+  journal={European Journal of Information Systems},
+  volume={19},
+  number={4},
+  pages={449--461},
+  year={2010},
+  publisher={Nature Publishing Group}
+}
+
+@article{fagiolo2010evolution,
+  title={The evolution of the world trade web: a weighted-network analysis},
+  author={Fagiolo, G. and Reyes, J. and Schiavo, S.},
+  journal={Journal of Evolutionary Economics},
+  volume={20},
+  number={4},
+  pages={479--514},
+  year={2010},
+  publisher={Springer}
+}
+
+@article{li2012dual,
+  title={Dual-hub network connectivity: An analysis of all Nippon Airways’ use of Tokyo’s Haneda and Narita airports},
+  author={Li, W.K. and Miyoshi, C. and Pagliari, R.},
+  journal={Journal of Air Transport Management},
+  volume={23},
+  pages={12--16},
+  year={2012},
+  publisher={Elsevier}
+}
+
+@article{wang2011exploring,
+  title={Exploring the network structure and nodal centrality of China’s air transport network: A complex network approach},
+  author={Wang, J. and Mo, H. and Wang, F. and Jin, F.},
+  journal={Journal of Transport Geography},
+  volume={19},
+  number={4},
+  pages={712--721},
+  year={2011},
+  publisher={Elsevier}
+}
+
+@article{aguirregabiria2010dynamic,
+  title={A dynamic game of airline network competition: Hub-and-spoke networks and entry deterrence},
+  author={Aguirregabiria, V. and Ho, C.Y.},
+  journal={International Journal of Industrial Organization},
+  volume={28},
+  number={4},
+  pages={377--382},
+  year={2010},
+  publisher={Elsevier}
+}
+
+@article{da2009structural,
+  title={Structural evolution of the Brazilian airport network},
+  author={da Rocha, L.E.C.},
+  journal={Journal of Statistical Mechanics: Theory and Experiment},
+  volume={2009},
+  pages={P04020},
+  year={2009},
+  publisher={IOP Publishing}
+}
+
+@article{wilkinson2012vulnerability,
+  title={The vulnerability of the European air traffic network to spatial hazards},
+  author={Wilkinson, S.M. and Dunn, S. and Ma, S.},
+  journal={Natural Hazards},
+  pages={1--10},
+  year={2012},
+  publisher={Springer}
+}
+
+@article{liu2010structure,
+  title={Structure and external factors of chinese city airline network},
+  author={Liu, H.K. and Zhang, X.L. and Zhou, T.},
+  journal={Physics Procedia},
+  volume={3},
+  number={5},
+  pages={1781--1789},
+  year={2010},
+  publisher={Elsevier}
+}
+
+@article{han2009network,
+  title={Network topology and correlation features affiliated with European airline companies},
+  author={Han, D.D. and Qian, J.H. and Liu, J.G.},
+  journal={Physica A: Statistical Mechanics and its Applications},
+  volume={388},
+  number={1},
+  pages={71--81},
+  year={2009},
+  publisher={Elsevier}
+}
+
+@article{hu2009empirical,
+  title={Empirical analysis of the worldwide maritime transportation network},
+  author={Hu, Y. and Zhu, D.},
+  journal={Physica A: Statistical Mechanics and its Applications},
+  volume={388},
+  number={10},
+  pages={2061--2071},
+  year={2009},
+  publisher={Elsevier}
+}
+
+@article{alderighi2007assessment,
+  title={Assessment of New Hub-and-Spoke and Point-to-Point Airline Network Configurations},
+  author={Alderighi, M. and Cento, A. and Nijkamp, P. and Rietveld, P.},
+  journal={Transport Reviews},
+  volume={27},
+  number={5},
+  pages={529--549},
+  year={2007},
+  publisher={Taylor \& Francis}
+}
+
+@article{derudder2007flying,
+  title={Flying where you don't want to go: An empirical analysis of hubs in the global airline network},
+  author={Derudder, B. and Devriendt, L. and Witlox, F.},
+  journal={Tijdschrift voor Economische en Sociale Geografie},
+  volume={98},
+  number={3},
+  pages={307--324},
+  year={2007},
+  publisher={Wiley Online Library}
+}
+
+@phdthesis{martin2010merger,
+  title={Merger analysis using a simulated annealing airline network model},
+  author={Martin, S.L.},
+  year={2010},
+  school={University of Delaware}
+}

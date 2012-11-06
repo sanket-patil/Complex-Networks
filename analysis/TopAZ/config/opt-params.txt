@@ -1,0 +1,2 @@
+eta = diameter
+rho = betweenness
