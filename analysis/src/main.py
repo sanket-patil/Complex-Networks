@@ -2,8 +2,6 @@ import sys
 
 import nwanalysis.nwanalysis as nwa
 from io.fileio import getEdgeListFromFile
-from io.fileio import save
-from statistics import statistics
    
 if __name__ == "__main__":
     if len(sys.argv) < 2:
