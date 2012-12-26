@@ -9,8 +9,8 @@ if len(sys.argv) < 3:
 airline = open(sys.argv[1])
 dirpath = sys.argv[2]
 el = airline.read().split('\n')
-gr = graph.graph.graph(directed = False)
+gr = graph.graph.graph(directed = False, weighted = False)
 gr.create(el)
-analyses.topology.properties.computeProperties(gr, os.path.join(dirpath, '.txt'))
+analyses.topology.properties.computeProperties(gr, os.path.join(dirpath, sys.argv[1] + '-properties.txt'))
 gr.reset()
 airline.close()
